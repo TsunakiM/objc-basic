@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FFE40B1F1F3F1CD90064BBE3"
-               BuildableName = "&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;"
-               BlueprintName = "&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;"
-               ReferencedContainer = "container:&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;.xcodeproj">
+               BlueprintIdentifier = "FFE40B821F429EB90064BBE3"
+               BuildableName = "traning1-1-2"
+               BlueprintName = "traning1-1-2"
+               ReferencedContainer = "container:traning1-1-2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FFE40B1F1F3F1CD90064BBE3"
-            BuildableName = "&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;"
-            BlueprintName = "&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;"
-            ReferencedContainer = "container:&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;.xcodeproj">
+            BlueprintIdentifier = "FFE40B821F429EB90064BBE3"
+            BuildableName = "traning1-1-2"
+            BlueprintName = "traning1-1-2"
+            ReferencedContainer = "container:traning1-1-2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FFE40B1F1F3F1CD90064BBE3"
-            BuildableName = "&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;"
-            BlueprintName = "&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;"
-            ReferencedContainer = "container:&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;.xcodeproj">
+            BlueprintIdentifier = "FFE40B821F429EB90064BBE3"
+            BuildableName = "traning1-1-2"
+            BlueprintName = "traning1-1-2"
+            ReferencedContainer = "container:traning1-1-2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FFE40B1F1F3F1CD90064BBE3"
-            BuildableName = "&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;"
-            BlueprintName = "&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;"
-            ReferencedContainer = "container:&#x57fa;&#x672c;&#x6587;&#x6cd5;-&#x30c6;&#x3099;&#x30fc;&#x30bf;&#x578b;&#xff08;&#x30b3;&#x30ec;&#x30af;&#x30b7;&#x30e7;&#x30f3;&#xff09;.xcodeproj">
+            BlueprintIdentifier = "FFE40B821F429EB90064BBE3"
+            BuildableName = "traning1-1-2"
+            BlueprintName = "traning1-1-2"
+            ReferencedContainer = "container:traning1-1-2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

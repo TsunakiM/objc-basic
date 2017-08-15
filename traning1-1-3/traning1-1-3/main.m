@@ -19,12 +19,12 @@ int main(int argc, const char * argv[]) {
         // NSString *checkStr = @"夜";
         // NSString *checkStr = @"hogehoge";
         NSArray *checkArray = [NSArray arrayWithObjects:@"東京都", @"埼玉県", @"神奈川県", @"千葉県", nil];
-
+        
         // if文
         if(checkNum % 2 == 0){
             NSLog(@"if文: %d は偶数です。", checkNum);
         }
-
+        
         // if〜else文
         if(checkNum %2 == 0){
             NSLog(@"if〜else文: %d は偶数です。", checkNum);
@@ -42,7 +42,7 @@ int main(int argc, const char * argv[]) {
         } else {
             NSLog(@"if〜else if文: いらっしゃいませ");
         }
-
+        
         // 三項演算子
         checkNum %2 == 0 ? NSLog(@"三項演算子: %d は偶数です。", checkNum) : NSLog(@"三項演算子: %d は奇数です。", checkNum);
         
@@ -57,17 +57,17 @@ int main(int argc, const char * argv[]) {
         
         // swich文
         switch(checkNum % 2){
-        case 0:
-            NSLog(@"swich文: %d は偶数です", checkNum);
-            break;
-            
-        case 1:
-            NSLog(@"swich文: %d は奇数です", checkNum);
-            break;
-            
-        default:
-            NSLog(@"swich文: 数字を入力してください");
-            break;
+            case 0:
+                NSLog(@"swich文: %d は偶数です", checkNum);
+                break;
+                
+            case 1:
+                NSLog(@"swich文: %d は奇数です", checkNum);
+                break;
+                
+            default:
+                NSLog(@"swich文: 数字を入力してください");
+                break;
         }
     }
     return 0;

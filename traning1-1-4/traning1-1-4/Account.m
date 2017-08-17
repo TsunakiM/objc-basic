@@ -27,9 +27,6 @@
     age = AGE;
     sex = SEX;
     favLang = FAVLANG;
-    employeeList[0][0] = @"hoge";
-    employeeList[0][1] = @"hogehoge";
-    NSLog(@"%@", employeeList);
 }
 
 -(void)printDetails {

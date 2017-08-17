@@ -12,10 +12,7 @@
 
 @implementation Account
 
-
-
-@synthesize name, age, sex, favLang;
-//@synthesize name, age, sex, favLang, employeeList;
+@synthesize name, age, sex, favLang, employeeList;
 
 +(Account*)Account {
     Account* obj;
@@ -26,14 +23,13 @@
 }
 
 -(void)addEmployee :(NSString*)NAME :(NSUInteger)AGE :(NSString*)SEX :(NSString*)FAVLANG{
-        name = NAME;
-        age = AGE;
-        sex = SEX;
-        favLang = FAVLANG;
-}
-
--(void)allEmployee{
-    
+    name = NAME;
+    age = AGE;
+    sex = SEX;
+    favLang = FAVLANG;
+    employeeList[0][0] = @"hoge";
+    employeeList[0][1] = @"hogehoge";
+    NSLog(@"%@", employeeList);
 }
 
 -(void)printDetails {
@@ -42,6 +38,7 @@
     } else {
         NSLog(@"%@さんは、%@が得意な%zd歳です。", name, favLang, age);
     }
+//    NSLog(@"%@", employeeList[listCount]);
 }
 
 @end

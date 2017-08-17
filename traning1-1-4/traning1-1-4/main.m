@@ -15,6 +15,9 @@
         
         [obj addEmployee:@"yamada" :24 :@"F" :@"Java"];
         [obj printDetails];
+        [obj addEmployee:@"satou" :31 :@"M" :@"C#"];
+        [obj printDetails];
+        
 
         return 0;
     }

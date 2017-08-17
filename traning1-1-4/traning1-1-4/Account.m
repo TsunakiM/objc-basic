@@ -9,22 +9,36 @@
 #import <Foundation/Foundation.h>
 #import "Account.h"
 
-// Account.hで宣言したメソッドの内容
+
 @implementation Account
 
-    // インスタンス変数messageにテキストを設定し、変数strとして返す。
-    -(void)setMessage:(NSString*) str {
-        message = str;
-    }
 
-    // インスタンス変数messageを取り出す。
-    -(NSString*)message {
-        return message;
-    }
 
-    // インスタンス変数messageを出力する。
-    -(void)printMessage {
-        NSLog(@"%@",message);
+@synthesize name, age, sex, favLang;
+//@synthesize name, age, sex, favLang, employeeList;
+
++(Account*)Account {
+    Account* obj;
+    @autoreleasepool {
+        obj = [self new];
     }
+    return obj;
+}
+
+//-(void)addEmployee :(NSString*)name :(NSUInteger*)age :(NSString*)sex :(NSString*)favLang{
+//    
+//}
+
+-(void)allEmployee{
+    
+}
+
+-(void)printDetails {
+    if([self.sex isEqualToString: @"M"]) {
+        NSLog(@"%@君は、%@が得意な%zd歳です。", name, favLang, age);
+    } else {
+        NSLog(@"%@さんは、%@が得意な%zd歳です。", name, favLang, age);
+    }
+}
 
 @end

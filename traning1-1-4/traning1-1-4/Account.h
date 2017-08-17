@@ -9,15 +9,17 @@
 #import <Foundation/Foundation.h>
 
 // プロパティの設定
-@interface Account : NSObject {
-    NSString *message;
-    NSDictionary *employeeRegister;
-}
+@interface Account : NSObject
 
-// メソッドの宣言
--(void)setMessage:(NSString*) str;
--(NSString*)message;
--(void)printMessage;
--(void)employeeSetting;
+@property(retain)NSString *name;
+@property NSUInteger age;
+@property(retain)NSString *sex;
+@property(retain)NSString *favLang;
+//@property NSMutableArray *employeeList;
+
++(Account*)Account;
+//-(void)addEmployee :(NSString*)name :(NSUInteger*)age :(NSString*)sex :(NSString*)favLang;
+-(void)allEmployee;
+-(void)printDetails;
 
 @end

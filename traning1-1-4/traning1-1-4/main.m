@@ -12,10 +12,8 @@
     int main (int argc, const char * argv[]) {
         
         Account *obj = [Account Account];
-        [obj setName:@"yamada"];
-        [obj setAge:24];
-        [obj setSex:@"M"];
-        [obj setFavLang:@"java"];
+        
+        [obj addEmployee:@"yamada" :24 :@"F" :@"Java"];
         [obj printDetails];
 
         return 0;

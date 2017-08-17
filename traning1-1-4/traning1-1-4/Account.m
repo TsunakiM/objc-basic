@@ -25,9 +25,12 @@
     return obj;
 }
 
-//-(void)addEmployee :(NSString*)name :(NSUInteger*)age :(NSString*)sex :(NSString*)favLang{
-//    
-//}
+-(void)addEmployee :(NSString*)NAME :(NSUInteger)AGE :(NSString*)SEX :(NSString*)FAVLANG{
+        name = NAME;
+        age = AGE;
+        sex = SEX;
+        favLang = FAVLANG;
+}
 
 -(void)allEmployee{
     

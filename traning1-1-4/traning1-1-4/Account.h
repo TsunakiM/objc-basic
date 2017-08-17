@@ -11,14 +11,14 @@
 // プロパティの設定
 @interface Account : NSObject
 
-@property(retain)NSString *name;
+@property NSString *name;
 @property NSUInteger age;
-@property(retain)NSString *sex;
-@property(retain)NSString *favLang;
+@property NSString *sex;
+@property NSString *favLang;
 //@property NSMutableArray *employeeList;
 
 +(Account*)Account;
-//-(void)addEmployee :(NSString*)name :(NSUInteger*)age :(NSString*)sex :(NSString*)favLang;
+-(void)addEmployee :(NSString*)NAME :(NSUInteger)AGE :(NSString*)SEX :(NSString*)FAVLANG;
 -(void)allEmployee;
 -(void)printDetails;
 

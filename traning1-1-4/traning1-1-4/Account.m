@@ -27,6 +27,9 @@
     age = AGE;
     sex = SEX;
     favLang = FAVLANG;
+
+    [employeeList addObject:@[NAME, age, SEX, FAVLANG]];
+    NSLog(@"%@", employeeList);
 }
 
 -(void)printDetails {

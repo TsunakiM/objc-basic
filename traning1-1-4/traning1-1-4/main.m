@@ -12,14 +12,9 @@
     int main (int argc, const char * argv[]) {
         
         Account *obj = [Account Account];
+        obj.employeeList = [@[] mutableCopy];
         
         [obj addEmployee:@"yamada" :24 :@"F" :@"Java"];
-        // 仮置きここから
-        obj.employeeList[0] = @"hoge";
-        obj.employeeList[1] = @"hogehoge";
-        NSLog(@"%@", obj.employeeList);
-        NSLog(@"%@", obj.employeeList[0]);
-        // 仮置きここまで
         [obj printDetails];
         [obj addEmployee:@"satou" :31 :@"M" :@"C#"];
         [obj printDetails];

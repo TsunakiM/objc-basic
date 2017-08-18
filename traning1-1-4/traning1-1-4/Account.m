@@ -28,17 +28,23 @@
     sex = SEX;
     favLang = FAVLANG;
 
-    [employeeList addObject:@[NAME, age, SEX, FAVLANG]];
-    NSLog(@"%@", employeeList);
+    [employeeList addObject:@[NAME, @(AGE), SEX, FAVLANG]];
 }
 
--(void)printDetails {
-    if([self.sex isEqualToString: @"M"]) {
-        NSLog(@"%@君は、%@が得意な%zd歳です。", name, favLang, age);
-    } else {
-        NSLog(@"%@さんは、%@が得意な%zd歳です。", name, favLang, age);
+-(void)allEmployee {
+    NSLog(@"~~~社員一覧~~~");
+    for(int i=0; i < employeeList.count; i++) {
+        NSLog(@"%d: %@", i, employeeList[i][0]);
     }
-//    NSLog(@"%@", employeeList[listCount]);
+    NSLog(@"~~~社員一覧~~~");
+}
+
+-(void)printDetails :(NSUInteger)listNum {
+    if([employeeList[listNum][2] isEqualToString: @"M"]) {
+        NSLog(@"%@君は、%@が得意な%@歳です。", employeeList[listNum][0], employeeList[listNum][3], employeeList[listNum][1]);
+    } else {
+        NSLog(@"%@さんは、%@が得意な%@歳です。", employeeList[listNum][0], employeeList[listNum][3], employeeList[listNum][1]);
+    }
 }
 
 @end

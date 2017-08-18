@@ -14,10 +14,16 @@
         Account *obj = [Account Account];
         obj.employeeList = [@[] mutableCopy];
         
-        [obj addEmployee:@"yamada" :24 :@"F" :@"Java"];
-        [obj printDetails];
-        [obj addEmployee:@"satou" :31 :@"M" :@"C#"];
-        [obj printDetails];
+        [obj addEmployee:@"山田太郎" :24 :@"M" :@"Java"];
+        [obj addEmployee:@"佐藤大輔" :31 :@"M" :@"C#"];
+        [obj addEmployee:@"鈴木花子" :22 :@"F" :@"Javascript"];
+        [obj addEmployee:@"Jon Coner" :24 :@"M" :@"C++"];
+        
+        [obj allEmployee];
+        [obj printDetails: 0];
+        [obj printDetails: 1];
+        [obj printDetails: 2];
+        [obj printDetails: 3];
         
 
         return 0;

@@ -19,6 +19,7 @@
 
 +(Account*)Account;
 -(void)addEmployee :(NSString*)NAME :(NSUInteger)AGE :(NSString*)SEX :(NSString*)FAVLANG;
--(void)printDetails;
+-(void)allEmployee;
+-(void)printDetails :(NSUInteger)listNum;
 
 @end

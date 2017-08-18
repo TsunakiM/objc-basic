@@ -15,10 +15,7 @@ int main(int argc, const char * argv[]) {
         // 判定用の変数
         int checkNum = 2;
         NSString *checkStr = @"朝";
-        // NSString *checkStr = @"昼";
-        // NSString *checkStr = @"夜";
-        // NSString *checkStr = @"hogehoge";
-        NSArray *checkArray = [NSArray arrayWithObjects:@"東京都", @"埼玉県", @"神奈川県", @"千葉県", nil];
+        NSArray *checkArray = @[@"東京都", @"埼玉県", @"神奈川県", @"千葉県"];
         
         // if文
         if(checkNum % 2 == 0){
@@ -26,7 +23,7 @@ int main(int argc, const char * argv[]) {
         }
         
         // if〜else文
-        if(checkNum %2 == 0){
+        if(checkNum % 2 == 0){
             NSLog(@"if〜else文: %d は偶数です。", checkNum);
         } else {
             NSLog(@"if〜else文: %d は奇数です。", checkNum);
@@ -44,12 +41,13 @@ int main(int argc, const char * argv[]) {
         }
         
         // 三項演算子
-        checkNum %2 == 0 ? NSLog(@"三項演算子: %d は偶数です。", checkNum) : NSLog(@"三項演算子: %d は奇数です。", checkNum);
+        checkNum % 2 == 0 ? NSLog(@"三項演算子: %d は偶数です。", checkNum) : NSLog(@"三項演算子: %d は奇数です。", checkNum);
         
         // for文
-        for(int i=0;i<3;i++){
+        for(int i = 0; i < 3; i++){
             NSLog(@"for文 %d回目", i+1);
         }
+        
         // 高速列挙構文
         for(NSString *hoge in checkArray){
             NSLog(@"高速列挙構文: %@", hoge);

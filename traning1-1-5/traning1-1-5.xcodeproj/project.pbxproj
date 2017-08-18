@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FFB086E31F46BDB700FF4409 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB086E21F46BDB700FF4409 /* main.m */; };
+		FFB086F21F46D7BF00FF4409 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB086F11F46D7BF00FF4409 /* MyClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		FFB086DF1F46BDB700FF4409 /* traning1-1-5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "traning1-1-5"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB086E21F46BDB700FF4409 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FFB086F01F46D7BF00FF4409 /* MyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyClass.h; path = ../MyClass.h; sourceTree = "<group>"; };
+		FFB086F11F46D7BF00FF4409 /* MyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyClass.m; path = ../MyClass.m; sourceTree = "<group>"; };
+		FFB086F31F46EED500FF4409 /* FavoriteProgrammingLanguageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteProgrammingLanguageDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				FFB086E21F46BDB700FF4409 /* main.m */,
+				FFB086F01F46D7BF00FF4409 /* MyClass.h */,
+				FFB086F11F46D7BF00FF4409 /* MyClass.m */,
+				FFB086F31F46EED500FF4409 /* FavoriteProgrammingLanguageDelegate.h */,
 			);
 			path = "traning1-1-5";
 			sourceTree = "<group>";
@@ -119,6 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB086F21F46D7BF00FF4409 /* MyClass.m in Sources */,
 				FFB086E31F46BDB700FF4409 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  main.m
+//  MyClass.h
 //  traning1-1-5
 //
 //  Created by MAC管理者 STV on 2017/08/18.
@@ -7,12 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MyClass.h"
+#import "FavoriteProgrammingLanguageDelegate.h"
 
-int main(int argc, const char * argv[]) {
-    
-    id myClass = [MyClass new];
-    [myClass foofoo];
-    
-    return 0;
-}
+@interface MyClass : NSObject <FavoriteProgrammingLanguageDelegate>
+- (void)foofoo;
+@end

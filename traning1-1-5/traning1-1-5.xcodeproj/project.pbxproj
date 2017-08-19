@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FFB086E31F46BDB700FF4409 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB086E21F46BDB700FF4409 /* main.m */; };
-		FFB086F21F46D7BF00FF4409 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB086F11F46D7BF00FF4409 /* MyClass.m */; };
+		FFB087011F47F5CD00FF4409 /* Child.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB087001F47F5CD00FF4409 /* Child.m */; };
+		FFB087041F47F5E600FF4409 /* Parent.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB087031F47F5E600FF4409 /* Parent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,9 +27,10 @@
 /* Begin PBXFileReference section */
 		FFB086DF1F46BDB700FF4409 /* traning1-1-5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "traning1-1-5"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB086E21F46BDB700FF4409 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FFB086F01F46D7BF00FF4409 /* MyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyClass.h; path = ../MyClass.h; sourceTree = "<group>"; };
-		FFB086F11F46D7BF00FF4409 /* MyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyClass.m; path = ../MyClass.m; sourceTree = "<group>"; };
-		FFB086F31F46EED500FF4409 /* FavoriteProgrammingLanguageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteProgrammingLanguageDelegate.h; sourceTree = "<group>"; };
+		FFB086FF1F47F5CD00FF4409 /* Child.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Child.h; path = ../Child.h; sourceTree = "<group>"; };
+		FFB087001F47F5CD00FF4409 /* Child.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Child.m; path = ../Child.m; sourceTree = "<group>"; };
+		FFB087021F47F5E600FF4409 /* Parent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parent.h; sourceTree = "<group>"; };
+		FFB087031F47F5E600FF4409 /* Parent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				FFB086E21F46BDB700FF4409 /* main.m */,
-				FFB086F01F46D7BF00FF4409 /* MyClass.h */,
-				FFB086F11F46D7BF00FF4409 /* MyClass.m */,
-				FFB086F31F46EED500FF4409 /* FavoriteProgrammingLanguageDelegate.h */,
+				FFB087021F47F5E600FF4409 /* Parent.h */,
+				FFB087031F47F5E600FF4409 /* Parent.m */,
+				FFB086FF1F47F5CD00FF4409 /* Child.h */,
+				FFB087001F47F5CD00FF4409 /* Child.m */,
 			);
 			path = "traning1-1-5";
 			sourceTree = "<group>";
@@ -126,8 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB086F21F46D7BF00FF4409 /* MyClass.m in Sources */,
+				FFB087011F47F5CD00FF4409 /* Child.m in Sources */,
 				FFB086E31F46BDB700FF4409 /* main.m in Sources */,
+				FFB087041F47F5E600FF4409 /* Parent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +260,7 @@
 				FFB086E81F46BDB700FF4409 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

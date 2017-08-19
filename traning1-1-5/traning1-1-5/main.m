@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MyClass.h"
+#import "Parent.h"
 
-int main(int argc, const char * argv[]) {
-    
-    id myClass = [MyClass new];
-    [myClass foofoo];
+int main() {
+    Parent *parent = [Parent new];
+    [parent haveConversation];
     
     return 0;
 }

@@ -1,5 +1,5 @@
 //
-//  main.m
+//  Account.h
 //  traning1-1-5
 //
 //  Created by MAC管理者 STV on 2017/08/20.
@@ -7,11 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Account.h"
+#import "FavoriteProgrammingLanguage.h"
 
-int main(int argc, const char * argv[]) {
-    Account *account = [Account new];
-    [account wantJoinInternship];
-    
-    return 0;
-}
+@interface Account : NSObject
+- (void)wantJoinInternship;
+@end

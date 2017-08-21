@@ -11,15 +11,7 @@
 // プロパティの設定
 @interface Account : NSObject
 
-@property (nonatomic)NSString *name;
-@property (nonatomic)NSUInteger age;
-@property (nonatomic)NSString *sex;
-@property (nonatomic)NSString *favLang;
-@property (nonatomic)NSMutableArray *employeeList;
-
-+(Account*)Account;
--(void)addEmployee :(NSString*)NAME :(NSUInteger)AGE :(NSString*)SEX :(NSString*)FAVLANG;
--(void)allEmployee;
--(void)printDetails :(NSUInteger)listNum;
+- (void)init :(NSString *)name :(NSUInteger)age :(NSString *)sex :(NSString *)favoriteLanguage;
+- (void)printDetails;
 
 @end

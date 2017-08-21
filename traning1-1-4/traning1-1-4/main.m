@@ -11,20 +11,16 @@
 
     int main (int argc, const char * argv[]) {
         
-        Account *obj = [Account Account];
-        obj.employeeList = [@[] mutableCopy];
-        
-        [obj addEmployee:@"山田太郎" :24 :@"M" :@"Java"];
-        [obj addEmployee:@"佐藤大輔" :31 :@"M" :@"C#"];
-        [obj addEmployee:@"鈴木花子" :22 :@"F" :@"Javascript"];
-        [obj addEmployee:@"Jon Coner" :24 :@"M" :@"C++"];
-        
-        [obj allEmployee];
-        [obj printDetails: 0];
-        [obj printDetails: 1];
-        [obj printDetails: 2];
-        [obj printDetails: 3];
-        
+        Account *account = [Account new];
+ 
+        [account init:@"山田太郎" :24 :@"M" :@"Java"];
+        [account printDetails];
+        [account init:@"佐藤大輔" :31 :@"M" :@"C#"];
+        [account printDetails];
+        [account init:@"Jon Coner" :24 :@"M" :@"C++"];
+        [account printDetails];
+        [account init:@"鈴木花子" :22 :@"F" :@"Javascript"];
+        [account printDetails];
 
         return 0;
     }

@@ -9,17 +9,18 @@
 #import "FavoriteProgrammingLanguage.h"
 
 @implementation FavoriteProgrammingLanguage
+
 - (void)joinInternship {
-    if (![self.delegate respondsToSelector:@selector(canUseObjc)]) {
-        return;
-    }
     // デリゲートのメソッドcanUseObjcの呼び出し。
-    [self canUseObjc];
+    if([self canUseObjc]) {
+        NSLog(@"インターンに参加できます。");
+    }
 }
 
-- (void)canUseObjc {
+- (BOOL)canUseObjc {
     // デリゲートされる側の処理。
-    NSLog(@"Objctive-Cができます。");
+    BOOL objcInternship = YES;
+    return objcInternship;
 }
 
 @end

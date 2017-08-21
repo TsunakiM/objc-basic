@@ -10,7 +10,7 @@
 
 @protocol FavoriteProgrammingLanguageDelegate <NSObject>
 @optional
-- (void)canUseObjc;
+- (BOOL)canUseObjc;
 @end
 
 @interface FavoriteProgrammingLanguage : NSObject

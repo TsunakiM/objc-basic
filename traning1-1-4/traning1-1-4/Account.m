@@ -18,11 +18,13 @@
 
 @implementation Account
 
-- (void)init :(NSString *)name :(NSUInteger)age :(NSString *)sex :(NSString *)favoriteLanguage {
+- (id)init :(NSString *)name :(NSUInteger)age :(NSString *)sex :(NSString *)favoriteLanguage {
     self.name = name;
     self.age = age;
     self.sex = sex;
     self.favoriteLanguage = favoriteLanguage;
+    
+    return self;
 }
 
 - (void)printDetails {

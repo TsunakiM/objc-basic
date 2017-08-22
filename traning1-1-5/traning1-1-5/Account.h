@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "FavoriteProgrammingLanguage.h"
 
+// プロパティの設定
 @interface Account : NSObject
-- (void)wantJoinInternship;
+
+- (id)init :(NSString *)name :(NSUInteger)age :(NSString *)sex :(NSString *)favoriteLanguage;
+
 @end

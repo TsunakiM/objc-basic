@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Account.h"
 
-int main(int argc, const char * argv[]) {
-    Account *account = [Account new];
-    [account wantJoinInternship];
+int main (int argc, const char * argv[]) {
+    
+    Account *employee0000 = [[Account alloc] init:@"山田太郎" :24 :@"M" :@"Objective-C"];
     
     return 0;
 }

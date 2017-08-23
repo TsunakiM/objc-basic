@@ -1,6 +1,6 @@
 //
-//  traning2_1_2UITests.m
-//  traning2-1-2UITests
+//  lesson2_1_3UITests.m
+//  lesson2-1-3UITests
 //
 //  Created by MAC管理者 STV on 2017/08/23.
 //  Copyright © 2017年 MAC管理者 STV. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface traning2_1_2UITests : XCTestCase
+@interface lesson2_1_3UITests : XCTestCase
 
 @end
 
-@implementation traning2_1_2UITests
+@implementation lesson2_1_3UITests
 
 - (void)setUp {
     [super setUp];

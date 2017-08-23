@@ -18,21 +18,33 @@
 
 @implementation Account
 
-- (id)init :(NSString *)name :(NSUInteger)age :(NSString *)sex :(NSString *)favoriteLanguage {
-    self.name = name;
-    self.age = age;
-    self.sex = sex;
-    self.favoriteLanguage = favoriteLanguage;
+- (instancetype)init :(NSString *)name
+               setAge:(NSUInteger)age
+               setSex:(NSString *)sex
+  setFavoriteLanguage:(NSString *)favoriteLanguage {
+    self = [super init];
     
+    if (self) {
+        self.name = name;
+        self.age = age;
+        self.sex = sex;
+        self.favoriteLanguage = favoriteLanguage;
+    }
     return self;
 }
 
 - (void)printDetails {
     if([self.sex isEqualToString: @"M"]) {
         NSLog(@"%@君は、%@が得意な%zd歳です。", self.name, self.favoriteLanguage, self.age);
-    } else {
+    } else if([self.sex isEqualToString: @"F"]) {
         NSLog(@"%@さんは、%@が得意な%zd歳です。", self.name, self.favoriteLanguage, self.age);
+    } else {
+        NSLog(@"Error: %@さんの性別に誤りがあります。\n男性の場合はM、女性の場合はFを入力してください（半角英字の大文字です）。", self.name);
     }
+}
+
+- (void)printName {
+    NSLog(@"%@", self.name);
 }
 
 @end

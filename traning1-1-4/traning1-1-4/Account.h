@@ -11,7 +11,11 @@
 // プロパティの設定
 @interface Account : NSObject
 
-- (id)init :(NSString *)name :(NSUInteger)age :(NSString *)sex :(NSString *)favoriteLanguage;
+- (instancetype)init :(NSString *)name
+               setAge:(NSUInteger)age
+               setSex:(NSString *)sex
+  setFavoriteLanguage:(NSString *)favoriteLanguage;
 - (void)printDetails;
+- (void)printName;
 
 @end

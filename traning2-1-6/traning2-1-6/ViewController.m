@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *webViewToGoogle;
 
 @end
 
@@ -16,7 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // Stringオブジェクトをつくります
+    NSString* urlString = @"https://google.com";
+    // これを使って、URLオブジェクトをつくります
+    NSURL* googleURL = [NSURL URLWithString: urlString];
+    // さらにこれを使って、Requestオブジェクトをつくります
+    NSURLRequest* myRequest = [NSURLRequest requestWithURL: googleURL];
+    // これを、WebViewToGoogleのloadRequestメソッドに渡します
+    [self.webViewToGoogle loadRequest:myRequest];
 }
 
 

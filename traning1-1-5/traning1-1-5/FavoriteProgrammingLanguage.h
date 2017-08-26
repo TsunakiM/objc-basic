@@ -7,13 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Account.h"
 
-@protocol FavoriteProgrammingLanguageDelegate <NSObject>
-@optional
-- (BOOL)canUseObjc;
-@end
-
-@interface FavoriteProgrammingLanguage : NSObject
-@property (weak, nonatomic) id<FavoriteProgrammingLanguageDelegate> delegate;
-- (void)joinInternship;
+@interface FavoriteProgrammingLanguage: NSObject<FavoriteProgrammingLanguageDelegate>
+@property (weak, nonatomic) Account *account;
+- (void)hoge;
 @end

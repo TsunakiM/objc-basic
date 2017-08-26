@@ -9,18 +9,7 @@
 #import "FavoriteProgrammingLanguage.h"
 
 @implementation FavoriteProgrammingLanguage
+- (void)hoge {
 
-- (void)joinInternship {
-    // デリゲートのメソッドcanUseObjcの呼び出し。
-    if([self canUseObjc]) {
-        NSLog(@"インターンに参加できます。");
-    }
 }
-
-- (BOOL)canUseObjc {
-    // デリゲートされる側の処理。
-    BOOL objcInternship = YES;
-    return objcInternship;
-}
-
 @end

@@ -18,13 +18,26 @@
 
 @implementation Account
 
-- (id)init :(NSString *)name :(NSUInteger)age :(NSString *)sex :(NSString *)favoriteLanguage {
-    self.name = name;
-    self.age = age;
-    self.sex = sex;
-    self.favoriteLanguage = favoriteLanguage;
+- (instancetype)init :(NSString *)name
+               setAge:(NSUInteger)age
+               setSex:(NSString *)sex
+  setFavoriteLanguage:(NSString *)favoriteLanguage {
+    self = [super init];
     
+    if (self) {
+        self.name = name;
+        self.age = age;
+        self.sex = sex;
+        self.favoriteLanguage = favoriteLanguage;
+    }
     return self;
+}
+
+// デリゲートの中身の処理
+- (void)joinIntern {
+    if ([self.delegate respondsToSelector:@selector(console:)]) {
+        [self.delegate console:self.favoriteLanguage];
+    }
 }
 
 @end

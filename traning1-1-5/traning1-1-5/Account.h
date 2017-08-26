@@ -7,11 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FavoriteProgrammingLanguage.h"
 
-// プロパティの設定
+// デリゲート本体の宣言
+@protocol FavoriteProgrammingLanguageDelegate <NSObject>
+@optional
+- (void)console:(NSString *)sender;
+@end
+
 @interface Account : NSObject
+- (instancetype)init :(NSString *)name
+               setAge:(NSUInteger)age
+               setSex:(NSString *)sex
+  setFavoriteLanguage:(NSString *)favoriteLanguage;
 
-- (id)init :(NSString *)name :(NSUInteger)age :(NSString *)sex :(NSString *)favoriteLanguage;
+// デリゲートの中身の宣言
+@property (weak, nonatomic) id <FavoriteProgrammingLanguageDelegate> delegate;
+- (void)joinIntern;
 
 @end

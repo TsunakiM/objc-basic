@@ -10,6 +10,5 @@
 #import "Account.h"
 
 @interface FavoriteProgrammingLanguage: NSObject<FavoriteProgrammingLanguageDelegate>
-@property (weak, nonatomic) Account *account;
 - (void)hoge;
 @end

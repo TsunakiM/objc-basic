@@ -10,6 +10,11 @@
 
 @implementation FavoriteProgrammingLanguage
 - (void)hoge {
-
+    // 確認用NSLog
+    NSLog(@"hoge has been activated");
+    
+    Account *account = [Account new];
+    account.delegate = self;
+    NSLog(@"Objective-Cができます");
 }
 @end

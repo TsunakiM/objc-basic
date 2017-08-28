@@ -11,15 +11,10 @@
 // デリゲート本体の宣言
 @protocol FavoriteProgrammingLanguageDelegate <NSObject>
 @optional
-- (void)console:(NSString *)sender;
+- (void)console;
 @end
 
 @interface Account : NSObject
-- (instancetype)init :(NSString *)name
-               setAge:(NSUInteger)age
-               setSex:(NSString *)sex
-  setFavoriteLanguage:(NSString *)favoriteLanguage;
-
 // デリゲートの中身の宣言
 @property (weak, nonatomic) id <FavoriteProgrammingLanguageDelegate> delegate;
 - (void)joinIntern;

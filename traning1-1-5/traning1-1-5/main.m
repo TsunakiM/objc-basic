@@ -11,12 +11,8 @@
 
 int main (int argc, const char * argv[]) {
     
-    Account *employee = [[Account alloc] init:@"山田太郎"
-                                           setAge:24
-                                           setSex:@"M"
-                              setFavoriteLanguage:@"Objective-C"
-                        ];
+    Account *employee = [Account new];
     [employee joinIntern];
-    
+
     return 0;
 }

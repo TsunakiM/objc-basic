@@ -9,16 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "Account.h"
 
-@interface Account ()<FavoriteProgrammingLanguageDelegate>
+@interface Account ()
+@property (strong, nonatomic) NSString *hogeString;
 @end
 
 @implementation Account
 
 // デリゲートの中身の処理
-- (void)joinIntern {
-    if ([self.delegate respondsToSelector:@selector(console)]) {
-        // 確認用NSLog
-        NSLog(@"joinIntern has been activated");
+- (void)fuga {
+    NSLog(@"確認用: fuga has been activated");
+    if ([self.delegate respondsToSelector:@selector(didFuga:)]) {
+        self.hogeString = @"sample message";
+        [self.delegate didFuga:self.hogeString];
+        NSLog(@"確認用: fuga's if has been activated");
     }
 }
 

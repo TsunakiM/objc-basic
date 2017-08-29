@@ -6,15 +6,18 @@
 //  Copyright © 2017年 MAC管理者 STV. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "FavoriteProgrammingLanguage.h"
 
-@implementation FavoriteProgrammingLanguage
-- (void)hoge {
+@interface FavoriteProgrammingLanguage() <FavoriteProgrammingLanguageDelegate>
+@property (strong, nonatomic) Account *account;
+@end
+
+@implementation FavoriteProgrammingLanguage : Account
+- (void)didFuga: (NSString *)string {
     // 確認用NSLog
-    NSLog(@"hoge has been activated");
+    NSLog(@"確認用: hoge has been activated");
     
-    Account *account = [Account new];
-    account.delegate = self;
-    NSLog(@"Objective-Cができます");
+    NSLog(@"%@", string);
 }
 @end

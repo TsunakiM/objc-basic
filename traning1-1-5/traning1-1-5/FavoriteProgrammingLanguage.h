@@ -9,6 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "Account.h"
 
-@interface FavoriteProgrammingLanguage: NSObject<FavoriteProgrammingLanguageDelegate>
-- (void)hoge;
+@interface FavoriteProgrammingLanguage : Account
 @end

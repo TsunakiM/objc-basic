@@ -12,7 +12,7 @@
 int main (int argc, const char * argv[]) {
     
     Account *employee = [Account new];
-    [employee joinIntern];
+    [employee fuga];
 
     return 0;
 }

@@ -11,12 +11,11 @@
 // デリゲート本体の宣言
 @protocol FavoriteProgrammingLanguageDelegate <NSObject>
 @optional
-- (void)console;
+- (void)didFuga: (NSString *)string;
 @end
 
 @interface Account : NSObject
 // デリゲートの中身の宣言
 @property (weak, nonatomic) id <FavoriteProgrammingLanguageDelegate> delegate;
-- (void)joinIntern;
-
+- (void)fuga;
 @end

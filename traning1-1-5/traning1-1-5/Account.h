@@ -7,15 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FavoriteProgrammingLanguage.h"
+/*！！！ デリゲートされる側、処理をお願いされる側、通知を受けて処理をする側 ！！！*/
 
-// デリゲート本体の宣言
-@protocol FavoriteProgrammingLanguageDelegate <NSObject>
-@optional
-- (void)didFuga: (NSString *)string;
-@end
-
-@interface Account : NSObject
-// デリゲートの中身の宣言
-@property (weak, nonatomic) id <FavoriteProgrammingLanguageDelegate> delegate;
-- (void)fuga;
+@interface Account : NSObject <FavoriteProgrammingLanguageDelegate>
+// 普通のメソッド（mainから呼ぶやつ）
+- (void)activateJoinInternship;
 @end

@@ -64,10 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				FFB0872A1F4982A800FF4409 /* main.m */,
-				FFB087341F49834700FF4409 /* Account.h */,
-				FFB087351F49834700FF4409 /* Account.m */,
 				FFB087311F49832F00FF4409 /* FavoriteProgrammingLanguage.h */,
 				FFB087321F49832F00FF4409 /* FavoriteProgrammingLanguage.m */,
+				FFB087341F49834700FF4409 /* Account.h */,
+				FFB087351F49834700FF4409 /* Account.m */,
 			);
 			path = "traning1-1-5";
 			sourceTree = "<group>";
@@ -260,6 +260,7 @@
 				FFB087301F4982A800FF4409 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

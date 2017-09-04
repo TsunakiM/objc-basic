@@ -8,21 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import "Account.h"
+#import "FavoriteProgrammingLanguage.h"
+/*！！！ デリゲートされる側、処理をお願いされる側、通知を受けて処理をする側 ！！！*/
 
 @interface Account ()
-@property (strong, nonatomic) NSString *hogeString;
 @end
 
-@implementation Account
-
-// デリゲートの中身の処理
-- (void)fuga {
-    NSLog(@"確認用: fuga has been activated");
-    if ([self.delegate respondsToSelector:@selector(didFuga:)]) {
-        self.hogeString = @"sample message";
-        [self.delegate didFuga:self.hogeString];
-        NSLog(@"確認用: fuga's if has been activated");
-    }
+@implementation Account : NSObject
+- (void)activateJoinInternship {
+    // FPLクラスのインスタンスを生成し、
+    FavoriteProgrammingLanguage *favoriteProgrammingLanguage = [FavoriteProgrammingLanguage new];
+    // 自身にFPLクラスで宣言したデリゲートをセットし、
+    favoriteProgrammingLanguage.delegate = self;
+    // デリゲートで利用するメソッドを呼び出す。
+    [favoriteProgrammingLanguage joinInternship];
 }
 
+// デリゲートメソッドの中身を定義
+- (void)canObjc{
+    NSLog(@"Objctive-Cができます。");
+}
 @end

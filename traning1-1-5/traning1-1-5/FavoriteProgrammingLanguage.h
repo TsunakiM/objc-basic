@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Account.h"
+/*！！！ デリゲートする側、処理をお願いする側、通知を飛ばす側 ！！！*/
 
-@interface FavoriteProgrammingLanguage : Account
+// デリゲート用プロトコルを宣言
+@protocol FavoriteProgrammingLanguageDelegate <NSObject>
+@optional
+- (void)canObjc;
+@end
+
+@interface FavoriteProgrammingLanguage : NSObject
+// デリゲートで利用するためのメソッド名を定義
+@property (weak, nonatomic) id <FavoriteProgrammingLanguageDelegate> delegate;
+- (void)joinInternship;
 @end

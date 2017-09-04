@@ -8,16 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "FavoriteProgrammingLanguage.h"
+/*！！！ デリゲートする側、処理をお願いする側、通知を飛ばす側 ！！！*/
 
-@interface FavoriteProgrammingLanguage() <FavoriteProgrammingLanguageDelegate>
-@property (strong, nonatomic) Account *account;
+@interface FavoriteProgrammingLanguage ()
 @end
 
-@implementation FavoriteProgrammingLanguage : Account
-- (void)didFuga: (NSString *)string {
-    // 確認用NSLog
-    NSLog(@"確認用: hoge has been activated");
-    
-    NSLog(@"%@", string);
+@implementation FavoriteProgrammingLanguage
+
+// 設定されたデリゲートメソッドを呼び出す処理
+- (void)joinInternship{
+    // optionalなので、デリゲートをインポートした先に、実装されているかを確認する。
+    if ([self.delegate respondsToSelector:@selector(canObjc)]) {
+        [self.delegate canObjc];
+    }
 }
+
 @end

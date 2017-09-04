@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FavoriteProgrammingLanguage.h"
 #import "Account.h"
 
-int main (int argc, const char * argv[]) {
+//実行メソッド
+int main(int argc, const char * argv[]) {
     
-    Account *employee = [Account new];
-    [employee fuga];
-
+    // Accountのインスタンスを作成し、
+    Account *account = [Account new];
+    // デリゲート設定をしたメソッドを呼び出す。
+    [account activateJoinInternship];
+    
     return 0;
 }

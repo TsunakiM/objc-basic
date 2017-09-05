@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController<UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *lordStopBtn;
+@property UIAlertController *alertController;
 @end
 

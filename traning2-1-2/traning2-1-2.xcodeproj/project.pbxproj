@@ -15,7 +15,6 @@
 		FFD3CB341F4DB57F00DDDAC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD3CB321F4DB57F00DDDAC4 /* LaunchScreen.storyboard */; };
 		FFD3CB3F1F4DB57F00DDDAC4 /* traning2_1_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD3CB3E1F4DB57F00DDDAC4 /* traning2_1_2Tests.m */; };
 		FFD3CB4A1F4DB58000DDDAC4 /* traning2_1_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD3CB491F4DB58000DDDAC4 /* traning2_1_2UITests.m */; };
-		FFD3CB581F4DB69900DDDAC4 /* BwSPGdrCIAAGznl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFD3CB571F4DB69900DDDAC4 /* BwSPGdrCIAAGznl.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		FFD3CB451F4DB58000DDDAC4 /* traning2-1-2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "traning2-1-2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD3CB491F4DB58000DDDAC4 /* traning2_1_2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = traning2_1_2UITests.m; sourceTree = "<group>"; };
 		FFD3CB4B1F4DB58000DDDAC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFD3CB571F4DB69900DDDAC4 /* BwSPGdrCIAAGznl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = BwSPGdrCIAAGznl.jpg; path = ../../../../Downloads/BwSPGdrCIAAGznl.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +109,6 @@
 				FFD3CB301F4DB57F00DDDAC4 /* Assets.xcassets */,
 				FFD3CB321F4DB57F00DDDAC4 /* LaunchScreen.storyboard */,
 				FFD3CB351F4DB57F00DDDAC4 /* Info.plist */,
-				FFD3CB571F4DB69900DDDAC4 /* BwSPGdrCIAAGznl.jpg */,
 				FFD3CB241F4DB57E00DDDAC4 /* Supporting Files */,
 			);
 			path = "traning2-1-2";
@@ -249,7 +246,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFD3CB581F4DB69900DDDAC4 /* BwSPGdrCIAAGznl.jpg in Resources */,
 				FFD3CB341F4DB57F00DDDAC4 /* LaunchScreen.storyboard in Resources */,
 				FFD3CB311F4DB57F00DDDAC4 /* Assets.xcassets in Resources */,
 				FFD3CB2F1F4DB57F00DDDAC4 /* Main.storyboard in Resources */,
@@ -511,6 +507,7 @@
 				FFD3CB501F4DB58000DDDAC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFD3CB511F4DB58000DDDAC4 /* Build configuration list for PBXNativeTarget "traning2-1-2Tests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +516,7 @@
 				FFD3CB531F4DB58000DDDAC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFD3CB541F4DB58000DDDAC4 /* Build configuration list for PBXNativeTarget "traning2-1-2UITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +525,7 @@
 				FFD3CB561F4DB58000DDDAC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

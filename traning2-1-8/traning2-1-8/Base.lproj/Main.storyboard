@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好きな果物は？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfK-9e-86t" userLabel="fruitQuestionLabel">
+                                <rect key="frame" x="50" y="70" width="314" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oic-eA-7p7" userLabel="labelOveredBtn">
+                                <rect key="frame" x="50" y="70" width="314" height="30"/>
+                                <connections>
+                                    <action selector="labelOveredBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yQ4-xr-MA9"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lud-ac-mHT" userLabel="fruitPicker">
+                                <rect key="frame" x="0.0" y="589" width="414" height="147"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A48-eo-i2u" userLabel="DoneBtn">
+                                <rect key="frame" x="359" y="548.33333333333337" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="C6j-Pk-5wX"/>
+                                    <constraint firstAttribute="height" constant="35" id="Nl8-kT-Ndt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Vm-hu-840"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zfK-9e-86t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Mc-7g-TzH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lud-ac-mHT" secondAttribute="bottom" id="BVE-Tu-qkz"/>
+                            <constraint firstItem="oic-eA-7p7" firstAttribute="height" secondItem="zfK-9e-86t" secondAttribute="height" id="Dky-uX-934"/>
+                            <constraint firstItem="A48-eo-i2u" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="5" id="L6a-eE-jci"/>
+                            <constraint firstItem="lud-ac-mHT" firstAttribute="top" secondItem="A48-eo-i2u" secondAttribute="bottom" constant="5" id="R2K-cT-UWt"/>
+                            <constraint firstItem="lud-ac-mHT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="VRb-3j-sbP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oic-eA-7p7" secondAttribute="trailing" constant="30" id="bJV-wT-WXN"/>
+                            <constraint firstItem="lud-ac-mHT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bWl-NT-f3p"/>
+                            <constraint firstItem="oic-eA-7p7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="buv-iZ-MmQ"/>
+                            <constraint firstItem="lud-ac-mHT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="emD-mK-AKL"/>
+                            <constraint firstItem="oic-eA-7p7" firstAttribute="width" secondItem="zfK-9e-86t" secondAttribute="width" id="fSa-dl-Ydv"/>
+                            <constraint firstItem="zfK-9e-86t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="iiq-bf-emI"/>
+                            <constraint firstItem="lud-ac-mHT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kHC-C7-Fsx"/>
+                            <constraint firstItem="oic-eA-7p7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="kZ6-j4-pFX"/>
+                            <constraint firstItem="zfK-9e-86t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="q4J-z9-0yv"/>
+                            <constraint firstItem="oic-eA-7p7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="rxv-Gu-peK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zfK-9e-86t" secondAttribute="trailing" constant="30" id="vLa-cw-HU2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doneBtnSetting" destination="A48-eo-i2u" id="Psa-9h-ydT"/>
+                        <outlet property="fruitLabel" destination="zfK-9e-86t" id="US7-z3-sQf"/>
+                        <outlet property="fruitPicker" destination="lud-ac-mHT" id="DXf-Zn-dmS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.23188405797103" y="132.06521739130434"/>
+        </scene>
+    </scenes>
+</document>

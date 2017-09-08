@@ -15,6 +15,7 @@
 		FF537D081F612A85000EED00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF537D061F612A85000EED00 /* LaunchScreen.storyboard */; };
 		FF537D131F612A85000EED00 /* traning2_1_10Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF537D121F612A85000EED00 /* traning2_1_10Tests.m */; };
 		FF537D1E1F612A85000EED00 /* traning2_1_10UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF537D1D1F612A85000EED00 /* traning2_1_10UITests.m */; };
+		FF537D301F621FA8000EED00 /* myPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF537D2F1F621FA8000EED00 /* myPropertyList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		FF537D191F612A85000EED00 /* traning2-1-10UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "traning2-1-10UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF537D1D1F612A85000EED00 /* traning2_1_10UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = traning2_1_10UITests.m; sourceTree = "<group>"; };
 		FF537D1F1F612A85000EED00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF537D2F1F621FA8000EED00 /* myPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = myPropertyList.plist; path = ../myPropertyList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				FF537D011F612A85000EED00 /* Main.storyboard */,
 				FF537D041F612A85000EED00 /* Assets.xcassets */,
 				FF537D061F612A85000EED00 /* LaunchScreen.storyboard */,
+				FF537D2F1F621FA8000EED00 /* myPropertyList.plist */,
 				FF537D091F612A85000EED00 /* Info.plist */,
 				FF537CF81F612A84000EED00 /* Supporting Files */,
 			);
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF537D081F612A85000EED00 /* LaunchScreen.storyboard in Resources */,
+				FF537D301F621FA8000EED00 /* myPropertyList.plist in Resources */,
 				FF537D051F612A85000EED00 /* Assets.xcassets in Resources */,
 				FF537D031F612A85000EED00 /* Main.storyboard in Resources */,
 			);
@@ -507,6 +511,7 @@
 				FF537D241F612A85000EED00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF537D251F612A85000EED00 /* Build configuration list for PBXNativeTarget "traning2-1-10Tests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				FF537D271F612A85000EED00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF537D281F612A85000EED00 /* Build configuration list for PBXNativeTarget "traning2-1-10UITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				FF537D2A1F612A85000EED00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

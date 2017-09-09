@@ -2,7 +2,7 @@
 //  traning2_1_10Tests.m
 //  traning2-1-10Tests
 //
-//  Created by MAC管理者 STV on 2017/09/08.
+//  Created by MAC管理者 STV on 2017/09/09.
 //  Copyright © 2017年 MAC管理者 STV. All rights reserved.
 //
 

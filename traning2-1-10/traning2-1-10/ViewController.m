@@ -9,8 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) NSArray *cardImagesNameArray;
-@property (weak, nonatomic) NSArray *cardTestsArray;
+@property (strong, nonatomic) NSArray *cardImagesNameArray;
+@property (strong, nonatomic) NSArray *cardTestsArray;
 
 @end
 
@@ -18,11 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"viewDidLoad");
     
-    self.mainTableView.delegate = self;
-    self.mainTableView.dataSource = self;
+    self.mainTableView.estimatedRowHeight = 70;
     self.mainTableView.rowHeight = UITableViewAutomaticDimension;
-    self.mainTableView.estimatedRowHeight = 60;
+    
     
     //プロジェクト内のファイルにアクセスできるオブジェクトを宣言
     NSBundle *bundle = [NSBundle mainBundle];
@@ -41,6 +41,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Table Viewのセクション数を指定
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // 今回はセクション１個
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return MIN(self.cardImagesNameArray.count, self.cardTestsArray.count);
 }
@@ -48,19 +54,24 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // インスタンス化
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell" forIndexPath:indexPath];
-    // ストーリーボードのラベルをインスタンス化
-    UILabel *label = (UILabel *)[cell viewWithTag:2];
-    // ラベルの行数設定を無制限にする
-    label.numberOfLines = 0;
-    // ラベルテキストをセット
-    label.text = self.cardTestsArray[indexPath.row];
-    // ストーリーボードのイメージビューをインスタンス化
+    static NSString *CellIdentifier = @"tableCell";
+    // tableCell の ID で UITableViewCell のインスタンスを生成
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if(cell==nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    UIImage *img = [UIImage imageNamed:self.cardImagesNameArray[indexPath.row]];
+    // Tag番号 1 で UIImageView インスタンスの生成
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    // 画像をセット
-    imageView.image = [UIImage imageNamed:self.cardImagesNameArray[indexPath.row]];
-    // セルを実装
+    imageView.image = img;
+    
+    // Tag番号 ２ で UILabel インスタンスの生成
+    UILabel *label = (UILabel *)[cell viewWithTag:2];
+    label.numberOfLines = 0;
+    label.text = self.cardTestsArray[indexPath.row];
+    //[label sizeToFit];
+    
     return cell;
 }
 

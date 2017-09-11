@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"viewDidLoad");
     
     self.mainTableView.estimatedRowHeight = 70;
     self.mainTableView.rowHeight = UITableViewAutomaticDimension;

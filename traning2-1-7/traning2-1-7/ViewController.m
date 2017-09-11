@@ -12,17 +12,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *maxLengthAlateLabel;
 @property (weak, nonatomic) IBOutlet UITextField *topTextFieldSetting;
 @property (nonatomic) BOOL textcheck;
+
 @end
+
+// 最大文字数を定数で設定
+static int const MaxInputLength = 30;
+
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // デリゲートをセット
-    self.topTextFieldSetting.delegate = self;
     // 最大文字入力を超えた際に出すアラートラベルの、表示・非表示を切り替えるための宣言
     [self.view addSubview:self.maxLengthAlateLabel];
-    self.maxLengthAlateLabel.alpha = NO;
+    self.maxLengthAlateLabel.alpha = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,12 +46,10 @@
     // たったいま入力された文字を、入力済みのテキストに結合
     [nowText replaceCharactersInRange:range withString:string];
     
-    // 最大文字数を設定
-    int maxInputLength = 30;
     // 文字数オーバーしていた場合の処理
-    if (nowText.length > maxInputLength) {
+    if (nowText.length > MaxInputLength) {
         // エラー文を表示する処理
-        self.maxLengthAlateLabel.alpha = YES;
+        self.maxLengthAlateLabel.alpha = 1;
         // 最大文字数がNGのフラグを立てる
         self.textcheck = NO;
 
@@ -57,8 +58,8 @@
     
     // 最大文字数チェックがOKのフラグを立てる
     self.textcheck = YES;
-    // アラート用ラベルの、表示フラグをOFFに
-    self.maxLengthAlateLabel.alpha = NO;
+    // アラート用ラベルを透明にする
+    self.maxLengthAlateLabel.alpha = 0;
     return YES;
 }
 

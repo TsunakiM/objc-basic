@@ -10,6 +10,15 @@
 
 @interface ViewController ()
 
+// このクラスの中で、以下のキーを数字としてみなす宣言。
+// 引数にする場合は、最後方に命名した「ShareBtnType」を呼び出す。
+typedef enum : NSInteger {
+    // FB=1, Twitter=2, LINE=3とみなす。最上段で対応する値を宣言すれば、あとは連番になる。
+    Facebook = 1,
+    Twitter,
+    LINE
+} ShareBtnType;
+
 @end
 
 @implementation ViewController
@@ -19,35 +28,34 @@
     
     // 上から順にボタンが配置
     [alertController addAction:[UIAlertAction actionWithTitle:@"Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self selectedActionWith:1];
+        [self selectedActionWith:Facebook];
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"Twitter" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self selectedActionWith:2];
+        [self selectedActionWith:Twitter];
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"LINE" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self selectedActionWith:3];
+        [self selectedActionWith:LINE];
     }]];
     
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
 
+// ボタンが押された時の処理
 -(void)selectedActionWith:(int)index{
-    if(index == 1){
+    if(index == Facebook){
         NSLog(@"Facebook button pushed!");
-    } else if(index == 2) {
+    } else if(index == Twitter) {
         NSLog(@"Twitter button pushed!");
-    } else if(index == 3) {
+    } else if(index == LINE) {
         NSLog(@"LINE button pushed!");
     }
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

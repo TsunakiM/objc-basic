@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 
 @end
 
@@ -16,7 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.mainLabel.text = [[NSBundle mainBundle]
+                           localizedStringForKey:@"I'm started Obj-C lesson."
+                                           value:nil
+                                           table:@"Localizable"
+                          ];
 }
 
 

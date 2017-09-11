@@ -1,8 +1,8 @@
 //
 //  main.m
-//  traning2-1-12
+//  traning2-1-10
 //
-//  Created by MAC管理者 STV on 2017/09/10.
+//  Created by MAC管理者 STV on 2017/09/09.
 //  Copyright © 2017年 MAC管理者 STV. All rights reserved.
 //
 

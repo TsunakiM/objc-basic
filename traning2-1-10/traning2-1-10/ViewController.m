@@ -14,15 +14,17 @@
 
 @end
 
+static const NSUInteger NumberOfSection = 1;
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"viewDidLoad");
     
     self.mainTableView.estimatedRowHeight = 70;
     self.mainTableView.rowHeight = UITableViewAutomaticDimension;
     
+    [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableCell"];
     
     //プロジェクト内のファイルにアクセスできるオブジェクトを宣言
     NSBundle *bundle = [NSBundle mainBundle];
@@ -35,7 +37,6 @@
     self.cardTestsArray = [dic objectForKey:@"CardText"];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -43,37 +44,29 @@
 
 //Table Viewのセクション数を指定
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // 今回はセクション１個
-    return 1;
+    // 今回はセクション１個。定数で設定。
+    return NumberOfSection;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return MIN(self.cardImagesNameArray.count, self.cardTestsArray.count);
 }
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"tableCell";
-    // tableCell の ID で UITableViewCell のインスタンスを生成
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if(cell==nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    UIImage *img = [UIImage imageNamed:self.cardImagesNameArray[indexPath.row]];
-    // Tag番号 1 で UIImageView インスタンスの生成
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    imageView.image = img;
-    
-    // Tag番号 ２ で UILabel インスタンスの生成
-    UILabel *label = (UILabel *)[cell viewWithTag:2];
-    label.numberOfLines = 0;
-    label.text = self.cardTestsArray[indexPath.row];
-    //[label sizeToFit];
-    
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = self.cardTestsArray[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:self.cardImagesNameArray[indexPath.row]];
+
     return cell;
 }
+
+/* 参考にしたサイト
+ iOS6でセルの再利用方法が変わりました
+ http://obc-fight.blogspot.jp/2013/07/uitableview-uitableview1.html
+*/
 
 
 @end

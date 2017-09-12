@@ -8,25 +8,30 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<UIPickerViewDataSource, UIPickerViewDelegate>
+// ViewController側で、UIPickerViewDataSource, UIPickerViewDelegateの2つを接続済み。
+@interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *fruitPicker;
 @property (retain, nonatomic) IBOutlet UILabel *fruitLabel;
 @property (weak, nonatomic) IBOutlet UIButton *doneBtnSetting;
 @property (strong, nonatomic) NSArray *fruitList;
 - (IBAction)doneBtn:(id)sender;
-- (IBAction)labelOveredBtn:(id)sender;
+
 
 @end
+
+static const NSUInteger numberOfComponentsInPickerView = 1;
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Pickerの設定。デリゲート２つをセットし、中身を配列で用意する。
-    self.fruitPicker.dataSource = self;
-    self.fruitPicker.delegate = self;
+    // Pickerの設定。中身を配列で用意する。
     self.fruitList = @[@"りんご", @"バナナ",  @"みかん", @"ぶどう", @"メロン"];
+    
+    self.fruitLabel.text = [[NSBundle mainBundle]localizedStringForKey:@"likeFruitLabel"
+                                                                 value:nil
+                                                                 table:@"Localizable" ];
     
     // PickerとOverlayを非表示にする。
     self.fruitPicker.hidden = YES;
@@ -41,7 +46,7 @@
 /*~~~ Pickerの設定４つ ~~~*/
 // 列数を返して、
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
+    return numberOfComponentsInPickerView;
 }
 
 // 行数を返して、
@@ -54,28 +59,27 @@
     return self.fruitList[row];
 }
 
-// Labelの文字を、選択肢た文字に書き換える。
+// Labelの文字を、選択肢した文字に書き換える。
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.fruitLabel.text = self.fruitList[row];
 }
 
-// 画面タッチを判定して、Pickerが表示されていたら、非表示にする。
+// ラベルタッチイベントの取得(ラベルタッチでpicker表示、背景タッチでpkicker非表示)
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if(self.fruitPicker.hidden == NO && self.doneBtnSetting.hidden == NO) {
+    // 受け取ったタッチイベントをインスタンス化
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if(touch.view.tag == self.fruitLabel.tag) {
+        self.fruitPicker.hidden = NO;
+        self.doneBtnSetting.hidden = NO;
+    } else {
         self.fruitPicker.hidden = YES;
-        self.doneBtnSetting.hidden = YES;
+        self.doneBtnSetting.hidden =YES;
     }
 }
 
-// Doneボタンを押すと、PickerとDoneボタンを非表示にする。
 - (IBAction)doneBtn:(id)sender {
     self.fruitPicker.hidden = YES;
-    self.doneBtnSetting.hidden = YES;
-}
-
-// ラベルに被せた透明ボタンを押すと、PickerとDoneボタンを表示する。
-- (IBAction)labelOveredBtn:(id)sender {
-    self.fruitPicker.hidden = NO;
-    self.doneBtnSetting.hidden = NO;
+    self.doneBtnSetting.hidden =YES;
 }
 @end

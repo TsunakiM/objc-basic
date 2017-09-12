@@ -23,20 +23,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好きな果物は？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfK-9e-86t" userLabel="fruitQuestionLabel">
-                                <rect key="frame" x="50" y="70" width="314" height="30"/>
+                            <label opaque="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfK-9e-86t" userLabel="fruitQuestionLabel">
+                                <rect key="frame" x="50" y="70" width="314" height="28.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oic-eA-7p7" userLabel="labelOveredBtn">
-                                <rect key="frame" x="50" y="70" width="314" height="30"/>
-                                <connections>
-                                    <action selector="labelOveredBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yQ4-xr-MA9"/>
-                                </connections>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lud-ac-mHT" userLabel="fruitPicker">
                                 <rect key="frame" x="0.0" y="589" width="414" height="147"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Mpf-Gb-7nD"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="jKN-68-8kX"/>
+                                </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A48-eo-i2u" userLabel="DoneBtn">
                                 <rect key="frame" x="359" y="548.33333333333337" width="40" height="35"/>
@@ -47,7 +45,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <action selector="doneBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Vm-hu-840"/>
+                                    <action selector="doneBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="alc-wA-3mK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,20 +53,14 @@
                         <constraints>
                             <constraint firstItem="zfK-9e-86t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Mc-7g-TzH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lud-ac-mHT" secondAttribute="bottom" id="BVE-Tu-qkz"/>
-                            <constraint firstItem="oic-eA-7p7" firstAttribute="height" secondItem="zfK-9e-86t" secondAttribute="height" id="Dky-uX-934"/>
                             <constraint firstItem="A48-eo-i2u" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="5" id="L6a-eE-jci"/>
                             <constraint firstItem="lud-ac-mHT" firstAttribute="top" secondItem="A48-eo-i2u" secondAttribute="bottom" constant="5" id="R2K-cT-UWt"/>
                             <constraint firstItem="lud-ac-mHT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="VRb-3j-sbP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oic-eA-7p7" secondAttribute="trailing" constant="30" id="bJV-wT-WXN"/>
                             <constraint firstItem="lud-ac-mHT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bWl-NT-f3p"/>
-                            <constraint firstItem="oic-eA-7p7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="buv-iZ-MmQ"/>
                             <constraint firstItem="lud-ac-mHT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="emD-mK-AKL"/>
-                            <constraint firstItem="oic-eA-7p7" firstAttribute="width" secondItem="zfK-9e-86t" secondAttribute="width" id="fSa-dl-Ydv"/>
                             <constraint firstItem="zfK-9e-86t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="iiq-bf-emI"/>
                             <constraint firstItem="lud-ac-mHT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kHC-C7-Fsx"/>
-                            <constraint firstItem="oic-eA-7p7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="kZ6-j4-pFX"/>
                             <constraint firstItem="zfK-9e-86t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="q4J-z9-0yv"/>
-                            <constraint firstItem="oic-eA-7p7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="rxv-Gu-peK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zfK-9e-86t" secondAttribute="trailing" constant="30" id="vLa-cw-HU2"/>
                         </constraints>
                     </view>

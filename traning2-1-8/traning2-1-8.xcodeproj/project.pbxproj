@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9113AB4E1F67CA1300E96E29 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9113AB501F67CA1300E96E29 /* Localizable.strings */; };
 		FF7709F11F5FE0C400979C11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7709F01F5FE0C400979C11 /* main.m */; };
 		FF7709F41F5FE0C400979C11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7709F31F5FE0C400979C11 /* AppDelegate.m */; };
 		FF7709F71F5FE0C400979C11 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7709F61F5FE0C400979C11 /* ViewController.m */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9113AB4C1F67CA0900E96E29 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		9113AB4D1F67CA0A00E96E29 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9113AB4F1F67CA1300E96E29 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FF7709EC1F5FE0C300979C11 /* traning2-1-8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "traning2-1-8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7709F01F5FE0C400979C11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FF7709F21F5FE0C400979C11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		FF7709E31F5FE0C300979C11 = {
 			isa = PBXGroup;
 			children = (
+				9113AB501F67CA1300E96E29 /* Localizable.strings */,
 				FF7709EE1F5FE0C300979C11 /* traning2-1-8 */,
 				FF770A081F5FE0C400979C11 /* traning2-1-8Tests */,
 				FF770A131F5FE0C500979C11 /* traning2-1-8UITests */,
@@ -247,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF7709FF1F5FE0C400979C11 /* LaunchScreen.storyboard in Resources */,
+				9113AB4E1F67CA1300E96E29 /* Localizable.strings in Resources */,
 				FF7709FC1F5FE0C400979C11 /* Assets.xcassets in Resources */,
 				FF7709FA1F5FE0C400979C11 /* Main.storyboard in Resources */,
 			);
@@ -311,10 +317,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9113AB501F67CA1300E96E29 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9113AB4F1F67CA1300E96E29 /* ja */,
+			);
+			name = Localizable.strings;
+			path = "traning2-1-8";
+			sourceTree = "<group>";
+		};
 		FF7709F81F5FE0C400979C11 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FF7709F91F5FE0C400979C11 /* Base */,
+				9113AB4C1F67CA0900E96E29 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -323,6 +339,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FF7709FE1F5FE0C400979C11 /* Base */,
+				9113AB4D1F67CA0A00E96E29 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -334,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -382,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -507,6 +526,7 @@
 				FF770A1B1F5FE0C500979C11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF770A1C1F5FE0C500979C11 /* Build configuration list for PBXNativeTarget "traning2-1-8Tests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +535,7 @@
 				FF770A1E1F5FE0C500979C11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF770A1F1F5FE0C500979C11 /* Build configuration list for PBXNativeTarget "traning2-1-8UITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +544,7 @@
 				FF770A211F5FE0C500979C11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

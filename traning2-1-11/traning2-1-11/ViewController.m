@@ -21,9 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.mainTableView.delegate = self;
-    self.mainTableView.dataSource = self;
-    
     self.mainTableView.estimatedRowHeight = 120;
     self.mainTableView.rowHeight = UITableViewAutomaticDimension;
     

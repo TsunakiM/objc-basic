@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,31 +29,8 @@
                                         <rect key="frame" x="0.0" y="28" width="365" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ByB-5W-xgQ" id="aqU-YO-QC1">
-                                            <rect key="frame" x="0.0" y="0.0" width="365" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jyr-0h-suS">
-                                                    <rect key="frame" x="5" y="5" width="106.5" height="80"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="chX-A4-Tqf"/>
-                                                        <constraint firstAttribute="width" secondItem="jyr-0h-suS" secondAttribute="height" multiplier="4:3" id="cm7-Vo-UD2"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2Y-j1-UdV">
-                                                    <rect key="frame" x="121.5" y="5" width="238.5" height="109.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="B2Y-j1-UdV" secondAttribute="trailing" constant="5" id="7ws-uO-WH9"/>
-                                                <constraint firstAttribute="bottom" secondItem="B2Y-j1-UdV" secondAttribute="bottom" constant="5" id="Lxp-aI-bkc"/>
-                                                <constraint firstItem="jyr-0h-suS" firstAttribute="top" secondItem="aqU-YO-QC1" secondAttribute="top" constant="5" id="NTM-3P-FDC"/>
-                                                <constraint firstItem="B2Y-j1-UdV" firstAttribute="leading" secondItem="jyr-0h-suS" secondAttribute="trailing" constant="10" id="YIe-gA-JgP"/>
-                                                <constraint firstItem="jyr-0h-suS" firstAttribute="leading" secondItem="aqU-YO-QC1" secondAttribute="leading" constant="5" id="ex0-zc-ONI"/>
-                                                <constraint firstItem="B2Y-j1-UdV" firstAttribute="top" secondItem="aqU-YO-QC1" secondAttribute="top" constant="5" id="tQz-ME-OVF"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>

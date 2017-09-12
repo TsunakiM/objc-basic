@@ -12,12 +12,12 @@
 
 // このクラスの中で、以下のキーを数字としてみなす宣言。
 // 引数にする場合は、最後方に命名した「ShareBtnType」を呼び出す。
-typedef enum : NSInteger {
-    // FB=1, Twitter=2, LINE=3とみなす。最上段で対応する値を宣言すれば、あとは連番になる。
-    Facebook = 1,
+typedef NS_ENUM(NSInteger, ShareBtnType) {
+    // FB=0, Twitter=1, LINE=2とみなす。最上段で対応する値を宣言すれば、あとは連番になる。
+    Facebook = 0,
     Twitter,
     LINE
-} ShareBtnType;
+};
 
 @end
 

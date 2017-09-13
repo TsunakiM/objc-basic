@@ -10,11 +10,18 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) NSArray *sectionNameArray;
-@property (strong, nonatomic) NSArray *cardImageNameArray;
-@property (strong, nonatomic) NSArray *cardTextArray;
+@property (strong, nonatomic) NSMutableArray *cardImageNameArray;
+@property (strong, nonatomic) NSMutableArray *cardTextArray;
 @property NSDictionary *plistDictionary;
 
 @end
+
+typedef NS_ENUM(NSInteger, SectionTitle) {
+    Humans = 0,
+    Spells
+};
+
+static const NSUInteger HeightForHeaderInSection = 30;
 
 @implementation ViewController
 
@@ -24,16 +31,20 @@
     self.mainTableView.estimatedRowHeight = 120;
     self.mainTableView.rowHeight = UITableViewAutomaticDimension;
     
-    //プロジェクト内のファイルにアクセスできるオブジェクトを宣言
+    // 再利用可能なセルの作成（storybord側のIdentifierを設定すれば不要？）
+    [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableCell"];
+    
+    // bundle宣言をして、ファイルにアクセスできるようにして、
     NSBundle *bundle = [NSBundle mainBundle];
-    //読み込むプロパティリストのファイルパスを指定
+    // ファイルのアクセスパスを、文字列として保存して、
     NSString *path = [bundle pathForResource:@"PropertyList" ofType:@"plist"];
-    //プロパティリストの中身データを取得
-    NSDictionary *plistDictionary = [NSDictionary dictionaryWithContentsOfFile:path];
-    // キー値を元に各自データリストを取得
-    self.sectionNameArray = [plistDictionary objectForKey:@"SectionTitleList"];
-    self.cardImageNameArray = [plistDictionary objectForKey:@"HumanCardImageName"];
-    self.cardTextArray = [plistDictionary objectForKey:@"HumanCardText"];
+    // 定義したDictionaryに、plistを格納する。
+    self.plistDictionary = [NSDictionary dictionaryWithContentsOfFile:path];
+
+    self.sectionNameArray = [self.plistDictionary objectForKey:@"SectionTitleList"];
+    self.cardImageNameArray = [@[] mutableCopy];
+    self.cardTextArray = [@[] mutableCopy];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,51 +63,50 @@
 
 // セクションの高さ
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 20;
+    return HeightForHeaderInSection;
 }
 
 // セルの数（必須メソッド）
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    switch (section) {
+        case Humans:
+            self.cardImageNameArray = [self.plistDictionary objectForKey:@"HumanCardImageName"];
+            break;
+            
+        case Spells:
+            self.cardImageNameArray = [self.plistDictionary objectForKey:@"SpellCardImageName"];
+            break;
+            
+        default:
+            break;
+    }
+    return self.cardImageNameArray.count;
 }
 
 // セルの作成（必須メソッド）
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *CellIdentifier = @"tableCell";
-    // "cell"というkeyでcellデータを取得。
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-     // cellデータが無い場合、UITableViewCellを生成して、"cell"というkeyでキャッシュする。
-    if(cell==nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // ストーリーボードのラベルをインスタンス化
-    UILabel *label = (UILabel *)[cell viewWithTag:1];
-    // ストーリーボードのイメージビューをインスタンス化
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:2];
-
     // セクションのインデックスによって別々のテキストと画像の配列を用意する
     switch (indexPath.section) {
-        case 0:
+        case Humans:
             self.cardImageNameArray = [self.plistDictionary objectForKey:@"HumanCardImageName"];
             self.cardTextArray = [self.plistDictionary objectForKey:@"HumanCardText"];
             break;
-        case 1:
+        case Spells:
             self.cardImageNameArray = [self.plistDictionary objectForKey:@"SpellCardImageName"];
             self.cardTextArray = [self.plistDictionary objectForKey:@"SpellCardText"];
             break;
-        
         default:
             break;
     }
-    NSLog(@"てすと用 %@",self.cardTextArray);
-    // ラベルテキストをセット
-    label.text = self.cardTextArray[indexPath.row];
-    // 画像をセット
-    imageView.image = [UIImage imageNamed: self.cardImageNameArray[indexPath.row]];
-    // セルを実装
+    
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = self.cardTextArray[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:self.cardImageNameArray[indexPath.row]];
     return cell;
+    
 }
 
 

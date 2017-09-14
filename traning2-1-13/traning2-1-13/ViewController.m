@@ -17,26 +17,17 @@
 @property NSArray *SectionNameArray;
 @property NSMutableArray *nationalFlagIconArray;
 
-typedef NS_ENUM(NSInteger, SectionTitle) {
-    blueFlag = 0,
-    redFlag,
-    whiteFlag,
-    symbolFlag,
-    sunFlag
-};
-
 @end
 
 // カスタムセル/カスタムセクションのIdentifierを設定したので、それを定数に。
 static NSString* const CellIdentifier = @"CustumCell";
 static NSString* const SectionIdentifier = @"HeaderView";
 /*~~~ セルのステータスの定数 ~~~*/
-// 画面内に存在するセルの数
+// １セクションに存在するセルの数
 static const NSUInteger NumberOfItemsInSection = 2;
 // １行に表示する画像の数
 static const NSUInteger NumberOfSellInLow = 2;
-// セル間のスペースのサイズ
-// storybordのCollectionView > Section Insetから4辺に同値を指定し、その値と同じにする。
+// セル間のスペースのサイズ。Section Insetの値を指定（4辺）。
 static const NSUInteger CellSpaceSize = 10;
 // セル間のスペースの数
 static const NSUInteger NumberOfSellSpace = NumberOfSellInLow + 1;
@@ -50,7 +41,7 @@ static const NSUInteger NumberOfSellSpace = NumberOfSellInLow + 1;
     /*~~~ セルの大きさを決める計算 ~~~*/
     // 画面のサイズを取得
     CGRect screenSize = [[UIScreen mainScreen] bounds];
-    // 横幅の決定。横幅からスペースを引いたものを、横に表示したい数で割る。
+    // 横幅の決定。横幅からマージンを引いたものを、横に表示したい数で割る。
     self.cellSize = (screenSize.size.width - (CellSpaceSize * NumberOfSellSpace)) / NumberOfSellInLow;
 
    

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+// カスタムセルのインポート
 #import "CustomCellCollectionViewCell.h"
 
 @interface ViewController ()
@@ -15,8 +16,9 @@
 @property NSArray *nationalFlagIconArray;
 
 @end
-
+// カスタムセルの方にIdentifierを設定したので、それを定数に。
 static NSString* const CellIdentifier = @"Cell";
+/*~~~ セルのステータスの定数 ~~~*/
 static const NSUInteger CellSpace = 15;
 static const NSUInteger NumberOfSectionsInCollectionView = 1;
 static const NSUInteger NumberOfItemsInSection = 9;
@@ -33,9 +35,10 @@ static const NSUInteger NumberOfSellSpace = 4;
     CGRect screenSize = [[UIScreen mainScreen] bounds];
     // 横幅の決定。横幅からセル間のスペースを引いたものを、横に表示したい数で割る。
     self.cellSize = (screenSize.size.width - CellSpace * NumberOfSellSpace) / NumberOfSellInLow;
-
-    self.nationalFlagIconArray = @[@"Algeria", @"Australia", @"Austria", @"Bangladesh", @"Canada", @"Israel", @"Japan", @"Micronesia", @"UK"];
     
+    // 表示用の画像のファイル名
+    self.nationalFlagIconArray = @[@"Algeria", @"Australia", @"Austria", @"Bangladesh", @"Canada", @"Israel", @"Japan", @"Micronesia", @"UK"];
+    // Nibファイル（xib）を接続
     [self.mainCollectionView registerNib:[UINib nibWithNibName:@"CustomCellCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:CellIdentifier];
 }
 
@@ -62,8 +65,10 @@ static const NSUInteger NumberOfSellSpace = 4;
     return listCellSize;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {    
-     CustomCellCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+// セルを表示させる
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    // デフォルトのCollectionViewCellは、画像を保持するプロパティがないので、カスタムクラスを作成してインスタンス化。
+    CustomCellCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.cellImage.image= [UIImage imageNamed:self.nationalFlagIconArray[indexPath.row]];
      
     return cell;

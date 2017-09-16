@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface showNameView : UIViewController
+@interface ShowNameView : UIViewController
 @property (strong, nonatomic) NSString *stringFromMain;
 @end

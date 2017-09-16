@@ -27,19 +27,19 @@
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="Send String(s)"/>
+                                <state key="normal" title="sendnameBtn"/>
                                 <connections>
                                     <action selector="sendBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qpi-37-snm"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MlS-dB-ij5">
-                                <rect key="frame" x="162.5" y="318.5" width="50" height="30"/>
+                                <rect key="frame" x="141.5" y="318.5" width="92" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter String(s): " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z56-7N-dzS">
-                                <rect key="frame" x="26" y="323" width="126.5" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="requestLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z56-7N-dzS">
+                                <rect key="frame" x="26" y="323" width="105.5" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,6 +62,8 @@
                     <navigationItem key="navigationItem" id="4QA-au-gQi"/>
                     <connections>
                         <outlet property="meinTextField" destination="MlS-dB-ij5" id="sa4-Ms-DGN"/>
+                        <outlet property="nameInputRequestLabel" destination="Z56-7N-dzS" id="CDe-r6-Kgl"/>
+                        <outlet property="sendNameBtn" destination="tQb-Lw-PXf" id="yfE-do-col"/>
                         <segue destination="Tpv-ZU-WCX" kind="show" identifier="MainToshowNameViewSegue" id="3C3-fh-GHm"/>
                     </connections>
                 </viewController>
@@ -72,7 +74,7 @@
         <!--showNameView-->
         <scene sceneID="Du1-fm-9Jt">
             <objects>
-                <viewControllerPlaceholder storyboardName="showNameView" referencedIdentifier="showNameView" id="Tpv-ZU-WCX" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ShowNameView" referencedIdentifier="showNameView" id="Tpv-ZU-WCX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ceh-5f-1h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1775" y="139"/>

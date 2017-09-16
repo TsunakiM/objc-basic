@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "showNameView.h"
+#import "ShowNameView.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *nameInputRequestLabel;
+@property (weak, nonatomic) IBOutlet UIButton *sendNameBtn;
 @property (weak, nonatomic) IBOutlet UITextField *meinTextField;
 
 @end
@@ -19,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.nameInputRequestLabel.text = [[NSBundle mainBundle] localizedStringForKey:@"nameInputRequestLabel" value:nil table:@"Localizable"];
+    [self.sendNameBtn setTitle:[[NSBundle mainBundle] localizedStringForKey:@"sendNameBtnString" value:nil table:@"Localizable"] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,17 +31,22 @@
 }
 
 - (IBAction)sendBtn:(id)sender {
-    //ここでパラメータを渡す
+    // セグエの起動
     [self performSegueWithIdentifier:@"MainToshowNameViewSegue" sender:self];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+// セグエで渡す値の準備
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"MainToshowNameViewSegue"]) {
-        UIStoryboard *mogmog = [UIStoryboard storyboardWithName:@"showNameView" bundle:nil];
-        showNameView *hogehoge = [mogmog instantiateViewControllerWithIdentifier:@"showNameView"];
-        hogehoge.stringFromMain = self.meinTextField.text;
+        ShowNameView *showNameView = [segue destinationViewController];
+        showNameView.stringFromMain = self.meinTextField.text;
     }
 }
+
+/*
+ 参考URL
+ StoryboardとSegueの基本 - Kesin's diary
+ http://kesin.hatenablog.com/entry/20120908/1347079921
+ */
 
 @end

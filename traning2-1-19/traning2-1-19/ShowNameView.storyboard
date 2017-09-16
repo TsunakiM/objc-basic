@@ -12,7 +12,7 @@
         <!--Show Name View-->
         <scene sceneID="aZ9-eB-mYX">
             <objects>
-                <viewController storyboardIdentifier="showNameView" id="WS0-Je-uZx" customClass="showNameView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showNameView" id="WS0-Je-uZx" customClass="ShowNameView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bN5-3z-IBp"/>
                         <viewControllerLayoutGuide type="bottom" id="FtU-dh-GlL"/>
@@ -22,8 +22,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="String from Main" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6O-Qp-JYu">
-                                <rect key="frame" x="99" y="319" width="176.5" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <rect key="frame" x="113" y="322" width="149" height="24"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -35,7 +35,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mainLabel" destination="e6O-Qp-JYu" id="esB-nh-8fa"/>
+                        <outlet property="mainLabel" destination="e6O-Qp-JYu" id="3dC-xf-msn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYO-97-qXV" userLabel="First Responder" sceneMemberID="firstResponder"/>

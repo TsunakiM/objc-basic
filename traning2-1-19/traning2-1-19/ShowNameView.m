@@ -6,15 +6,14 @@
 //  Copyright © 2017年 TsunakiMasuda. All rights reserved.
 //
 
-#import "showNameView.h"
+#import "ShowNameView.h"
 
-@interface showNameView ()
+@interface ShowNameView ()
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
-
 
 @end
 
-@implementation showNameView
+@implementation ShowNameView
 
 - (void)viewDidLoad {
     [super viewDidLoad];

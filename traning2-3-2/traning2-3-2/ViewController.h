@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+- (id)connectDataBase:(NSString *)dbName;
+extern NSString *const ToDoDatabaseName;
+extern NSString *const ToDoDatabaseTableName;
 
 @end
 

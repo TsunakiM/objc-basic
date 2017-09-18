@@ -18,6 +18,11 @@
 		918390961F6BDDA300865653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918390941F6BDDA300865653 /* LaunchScreen.storyboard */; };
 		918390A11F6BDDA300865653 /* traning2_3_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 918390A01F6BDDA300865653 /* traning2_3_2Tests.m */; };
 		918390AC1F6BDDA300865653 /* traning2_3_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 918390AB1F6BDDA300865653 /* traning2_3_2UITests.m */; };
+		918391131F6EAFBB00865653 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 918391111F6EAFBB00865653 /* CustomTableViewCell.m */; };
+		918391141F6EAFBB00865653 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 918391121F6EAFBB00865653 /* CustomTableViewCell.xib */; };
+		9183911A1F6F85E500865653 /* FMDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 918391191F6F85E500865653 /* FMDBModel.m */; };
+		918391201F6F868D00865653 /* ToDoEditView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9183911F1F6F868D00865653 /* ToDoEditView.storyboard */; };
+		918391271F6F8AEC00865653 /* ToDoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 918391261F6F8AEC00865653 /* ToDoEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,14 @@
 		918390A71F6BDDA300865653 /* traning2-3-2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "traning2-3-2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		918390AB1F6BDDA300865653 /* traning2_3_2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = traning2_3_2UITests.m; sourceTree = "<group>"; };
 		918390AD1F6BDDA300865653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		918391101F6EAFBB00865653 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		918391111F6EAFBB00865653 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		918391121F6EAFBB00865653 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		918391181F6F85E500865653 /* FMDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBModel.h; sourceTree = "<group>"; };
+		918391191F6F85E500865653 /* FMDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBModel.m; sourceTree = "<group>"; };
+		9183911F1F6F868D00865653 /* ToDoEditView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ToDoEditView.storyboard; sourceTree = "<group>"; };
+		918391251F6F8AEC00865653 /* ToDoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoEditViewController.h; sourceTree = "<group>"; };
+		918391261F6F8AEC00865653 /* ToDoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoEditViewController.m; sourceTree = "<group>"; };
 		9A8DAD28B8A37541642ED595 /* Pods-traning2-3-2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traning2-3-2.release.xcconfig"; path = "Pods/Target Support Files/Pods-traning2-3-2/Pods-traning2-3-2.release.xcconfig"; sourceTree = "<group>"; };
 		C1DE25724DF210D1C213E193 /* Pods-traning2-3-2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traning2-3-2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-traning2-3-2/Pods-traning2-3-2.debug.xcconfig"; sourceTree = "<group>"; };
 		C71F04EF27E02F9165F1E249 /* libPods-traning2-3-2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-traning2-3-2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,13 +141,10 @@
 		918390851F6BDDA300865653 /* traning2-3-2 */ = {
 			isa = PBXGroup;
 			children = (
-				918390891F6BDDA300865653 /* AppDelegate.h */,
-				9183908A1F6BDDA300865653 /* AppDelegate.m */,
-				9183908C1F6BDDA300865653 /* ViewController.h */,
-				9183908D1F6BDDA300865653 /* ViewController.m */,
-				9183908F1F6BDDA300865653 /* Main.storyboard */,
+				9183910E1F6E44C200865653 /* Views */,
+				9183910D1F6E44A600865653 /* Controllers */,
+				9183910F1F6EAF8A00865653 /* Models */,
 				918390921F6BDDA300865653 /* Assets.xcassets */,
-				918390941F6BDDA300865653 /* LaunchScreen.storyboard */,
 				918390971F6BDDA300865653 /* Info.plist */,
 				918390861F6BDDA300865653 /* Supporting Files */,
 			);
@@ -165,6 +175,41 @@
 				918390AD1F6BDDA300865653 /* Info.plist */,
 			);
 			path = "traning2-3-2UITests";
+			sourceTree = "<group>";
+		};
+		9183910D1F6E44A600865653 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				918390891F6BDDA300865653 /* AppDelegate.h */,
+				9183908A1F6BDDA300865653 /* AppDelegate.m */,
+				9183908C1F6BDDA300865653 /* ViewController.h */,
+				9183908D1F6BDDA300865653 /* ViewController.m */,
+				918391251F6F8AEC00865653 /* ToDoEditViewController.h */,
+				918391261F6F8AEC00865653 /* ToDoEditViewController.m */,
+				918391101F6EAFBB00865653 /* CustomTableViewCell.h */,
+				918391111F6EAFBB00865653 /* CustomTableViewCell.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9183910E1F6E44C200865653 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9183908F1F6BDDA300865653 /* Main.storyboard */,
+				9183911F1F6F868D00865653 /* ToDoEditView.storyboard */,
+				918391121F6EAFBB00865653 /* CustomTableViewCell.xib */,
+				918390941F6BDDA300865653 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9183910F1F6EAF8A00865653 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				918391181F6F85E500865653 /* FMDBModel.h */,
+				918391191F6F85E500865653 /* FMDBModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		C4CA3368936A0EE866358B23 /* Pods */ = {
@@ -297,7 +342,9 @@
 			files = (
 				918390961F6BDDA300865653 /* LaunchScreen.storyboard in Resources */,
 				918390931F6BDDA300865653 /* Assets.xcassets in Resources */,
+				918391141F6EAFBB00865653 /* CustomTableViewCell.xib in Resources */,
 				918390911F6BDDA300865653 /* Main.storyboard in Resources */,
+				918391201F6F868D00865653 /* ToDoEditView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +518,10 @@
 			files = (
 				9183908E1F6BDDA300865653 /* ViewController.m in Sources */,
 				9183908B1F6BDDA300865653 /* AppDelegate.m in Sources */,
+				918391271F6F8AEC00865653 /* ToDoEditViewController.m in Sources */,
+				918391131F6EAFBB00865653 /* CustomTableViewCell.m in Sources */,
 				918390881F6BDDA300865653 /* main.m in Sources */,
+				9183911A1F6F85E500865653 /* FMDBModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,6 +761,7 @@
 				918390B21F6BDDA300865653 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		918390B31F6BDDA300865653 /* Build configuration list for PBXNativeTarget "traning2-3-2Tests" */ = {
 			isa = XCConfigurationList;
@@ -719,6 +770,7 @@
 				918390B51F6BDDA300865653 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		918390B61F6BDDA300865653 /* Build configuration list for PBXNativeTarget "traning2-3-2UITests" */ = {
 			isa = XCConfigurationList;
@@ -727,6 +779,7 @@
 				918390B81F6BDDA300865653 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

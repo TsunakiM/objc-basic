@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     self.mainLabel.text = [[NSBundle mainBundle]
-                           localizedStringForKey:@"I'm started Obj-C lesson."
+                           localizedStringForKey:@"startedObjC"
                                            value:nil
                                            table:@"Localizable"
                           ];

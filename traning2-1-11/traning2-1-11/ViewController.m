@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) NSArray *sectionNameArray;
 @property (strong, nonatomic) NSMutableArray *cardImageNameArray;
 @property (strong, nonatomic) NSMutableArray *cardTextArray;
@@ -44,7 +45,6 @@ static const NSUInteger HeightForHeaderInSection = 30;
     self.sectionNameArray = [self.plistDictionary objectForKey:@"SectionTitleList"];
     self.cardImageNameArray = [@[] mutableCopy];
     self.cardTextArray = [@[] mutableCopy];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +56,7 @@ static const NSUInteger HeightForHeaderInSection = 30;
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.sectionNameArray.count;
 }
+
 // セクションのヘッダータイトル
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return self.sectionNameArray[section];
@@ -101,13 +102,11 @@ static const NSUInteger HeightForHeaderInSection = 30;
         default:
             break;
     }
-    
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.text = self.cardTextArray[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:self.cardImageNameArray[indexPath.row]];
-    return cell;
-    
-}
 
+    return cell;
+}
 
 @end

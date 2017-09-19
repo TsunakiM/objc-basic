@@ -243,6 +243,7 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
         [db executeUpdate:deleteTarget];
         [db close];
     }
+    // wont:行を消す用のメソッドもあるよ！
     [self refreshTableCell];
 }
 

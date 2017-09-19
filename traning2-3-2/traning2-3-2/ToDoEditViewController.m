@@ -119,8 +119,8 @@ static int const TodoLimitAfterDays = 5;
 
 // 登録アクション
 - (void)registerAction {
-    
-    ViewController *viewController = [[ViewController alloc] init];
+    // !!!!!!!!!! viewControllerじゃなくて、自身をインスタンス化でOK　!!!!!!!!!!!!!!
+    ViewController *viewController = [[ToDoEditViewController alloc] init];
     FMDatabase *db = [viewController connectDataBase:ToDoDatabaseName];
     
     // todoIdをセット（0をセットまたは+1で返す）

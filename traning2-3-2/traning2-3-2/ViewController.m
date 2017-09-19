@@ -13,17 +13,26 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
-@property (nonatomic) int cellCount;
 @property (strong, nonatomic) NSMutableArray *todoId;
 @property (strong, nonatomic) NSMutableArray *titleList;
 @property (strong, nonatomic) NSMutableArray *limitDateList;
 @property (strong, nonatomic) NSMutableArray *todoListArray;
+@property (nonatomic) NSUInteger cellCount;
 
 - (void)createTable;
 - (void)createDataSource;
+- (void)numberOfSell;
+- (void)refreshTableCell;
 - (int)countId;
 
+typedef NS_ENUM(NSUInteger, todoListENUM) {
+    todo_id = 0,
+    todo_title,
+    limit_date
+};
+
 @end
+
 // グローバル定数
 NSString *const ToDoDatabaseName = @"todoDatabase.db";
 NSString *const ToDoDatabaseTableName = @"tr_todo";
@@ -36,7 +45,7 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // 初回起動
     if([self initialActivationCheck]) {
         [self createTable];
     }
@@ -45,19 +54,24 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
     [self.mainTableView registerNib:nib forCellReuseIdentifier:ToDoShowCellIdentifer];
 }
 
-// ロード後に毎回、セルの数を決定、リロードをかける
+// ロードするたびに、テーブルにリロードをかける。
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    
-    // セルの数を決定する(初期化をしてから)
-    self.cellCount = 0;
-    self.cellCount = [self countId];
-    // ここでDataSourceを作る
-    [self createDataSource];
-    // テーブルをリロード
-    [self.mainTableView reloadData];
+    [self refreshTableCell];
 }
 
+// テーブルのリロード（再配置）。
+- (void)refreshTableCell {
+    // セルの数を決定する。
+    // カウントを初期化して、
+    self.cellCount = 0;
+    // 表示するセルの数をカウントし、
+    [self numberOfSell];
+    // DataSourceを作成し、
+    [self createDataSource];
+    // テーブルをリロード。
+    [self.mainTableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -70,7 +84,17 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
     // DBに接続。
     FMDatabase *db = [self connectDataBase:ToDoDatabaseName];
     // カラムが存在しない場合に、以下のカラムを作成
-    NSString *createTableString = @"CREATE TABLE IF NOT EXISTS tr_todo ( `todo_id` INTEGER NOT NULL, `todo_title` TEXT NOT NULL, `todo_contents` TEXT, `created` REAL NOT NULL, `modified` REAL NOT NULL, `limit_date` REAL, `delete_flg` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`todo_id`) );";
+    NSString *createTableString = @""
+                    "CREATE TABLE IF NOT EXISTS "
+                        "tr_todo ( "
+                            "`todo_id` INTEGER NOT NULL, "
+                            "`todo_title` TEXT NOT NULL, "
+                            "`todo_contents` TEXT, "
+                            "`created` REAL NOT NULL, "
+                            "`modified` REAL NOT NULL, "
+                            "`limit_date` REAL, "
+                            "`delete_flg` INTEGER NOT NULL DEFAULT 0, "
+                        "PRIMARY KEY(`todo_id`) );";
     // DBを開けて、
     [db open];
     // テーブルを作って、
@@ -79,13 +103,20 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
     [db close];
 }
 
+// DBに存在するすべての行数を数える。
 - (int)countId {
     // DB接続
     ToDoEditViewController *todoEditViewController = [[ToDoEditViewController alloc]init];
     FMDatabase *db = [self connectDataBase:ToDoDatabaseName];
     
     //count文の作成
-    NSString *countId = [[NSString alloc]initWithFormat:@"select count(*) as count from tr_todo where todo_id"];
+    NSString *countId = [[NSString alloc]initWithFormat:@""
+                         "SELECT "
+                            "count(*) as count "
+                         "FROM "
+                            "tr_todo "
+                         "WHERE "
+                            "todo_id"];
     // DBをオープン
     [db open];
     // セットしたcount文を回して、todo_idの数を数える
@@ -99,6 +130,30 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
     return todoEditViewController.todoId;
 }
 
+// 表示するセルの数を数える（delete_flg = 0のもの）。
+- (void)numberOfSell {
+    FMDatabase *db = [self connectDataBase:ToDoDatabaseName];
+    //count文の作成
+    NSString *countFlag = [[NSString alloc]initWithFormat:@""
+                         "SELECT "
+                            "count(*) as count "
+                         "FROM "
+                            "tr_todo "
+                         "WHERE "
+                            "delete_flg = 0"];
+    // DBをオープン
+    [db open];
+    // セットしたcount文を回して、todo_idの数を数える
+    FMResultSet *countNumberOfCell = [db executeQuery:countFlag];
+    if([countNumberOfCell next]) {
+        self.cellCount = [countNumberOfCell intForColumn:@"count"];
+    }
+    // DBを閉じる
+    [db close];
+    // 数えた値を返す
+}
+
+
 // DBと接続するメソッド（あとでModelへ）
 - (id)connectDataBase:(NSString *)dbName {
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
@@ -111,31 +166,32 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
 - (void)createDataSource {
     // DBの呼び出し
     FMDatabase *db = [self connectDataBase:ToDoDatabaseName];
-    //select文の作成（DB内のデータをlimitDateカラムに準ずる形で並べ替えて取り出す）
-    // どのDBからデータを取得するかを指定
-    NSString *select = [[NSString alloc] initWithFormat:@"SELECT * from tr_todo order by limit_date asc"];
+    // DBから、delete_flg = 0の行を、期日が早い順（昇順）で取り出す用の文字列。
+    NSString *displayCellSearchString = [[NSString alloc] initWithFormat:@""
+                          "SELECT "
+                            "* "
+                          "FROM "
+                            "tr_todo "
+                          "WHERE "
+                            "delete_flg = 0 "
+                          "ORDER BY "
+                            "limit_date asc"];
     // DBを開く
     [db open];
     // FMResultSetにDB先をセット
-    FMResultSet *resultSet = [db executeQuery:select];
-    //　カラムtodoTitle,limitDateの値を格納する配列を用意
+    FMResultSet *displayCellContents = [db executeQuery:displayCellSearchString];
     self.todoId = [@[] mutableCopy];
     self.titleList = [@[] mutableCopy];
     self.limitDateList = [@[] mutableCopy];
     self.todoListArray = [@[] mutableCopy];
     
-    while([resultSet next]) {
-        // ラベルに直接取り出した値を代入していく
-        NSString *toDoid = [resultSet stringForColumn:@"todo_id"];
-        //[self.todoId addObject:toDoid];
-        NSString *title = [resultSet stringForColumn:@"todo_title"];
-        //[self.titleList addObject:title];
-        NSString *limit = [resultSet stringForColumn:@"limit_date"];
-        //[self.limitDateList addObject:limit];
+    while ([displayCellContents next]) {
+        NSString *toDoid = [displayCellContents stringForColumn:@"todo_id"];
+        NSString *title = [displayCellContents stringForColumn:@"todo_title"];
+        NSString *limit = [displayCellContents stringForColumn:@"limit_date"];
         NSArray *aToDoListArray = @[toDoid, title, limit];
         [self.todoListArray addObject:aToDoListArray];
     }
-    NSLog(@"%@", self.todoListArray);
     // DBを閉じる
     [db close];
 }
@@ -164,8 +220,8 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
     // インスタンス化
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ToDoShowCellIdentifer forIndexPath:indexPath];
     // セルの番号に合わせて配列からテキストを入れていく
-    cell.todoName.text = self.todoListArray[indexPath.row][1];
-    cell.limitDate.text = [[NSString alloc] initWithFormat:@"期限日：%@", self.todoListArray[indexPath.row][2]];
+    cell.todoName.text = self.todoListArray[indexPath.row][todo_title];
+    cell.limitDate.text = [[NSString alloc] initWithFormat:@"期限日：%@", self.todoListArray[indexPath.row][limit_date]];
     // セルを返す
     return cell;
 }
@@ -173,8 +229,21 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
 // セルをスワイプで削除する画面を表示する。
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSLog(@"セルの中身: %@" , self.todoListArray[indexPath.row]);
+        FMDatabase *db = [self connectDataBase:ToDoDatabaseName];
+        NSLog(@"%@", self.todoListArray[indexPath.row][todo_id]);
+        NSString *deleteTarget = [[NSString alloc] initWithFormat:@""
+                                  "UPDATE "
+                                    "tr_todo "
+                                  "SET "
+                                    "delete_flg = 1 "
+                                  "WHERE "
+                                    "todo_id = %@;",
+                                  self.todoListArray[indexPath.row][todo_id]];
+        [db open];
+        [db executeUpdate:deleteTarget];
+        [db close];
     }
+    [self refreshTableCell];
 }
 
 // セルの幅（固定）

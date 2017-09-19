@@ -15,7 +15,7 @@
 @end
 
 // Todoの期日指定を定数で用意（n日後）
-static int const TodoLimitAfterDays = 7;
+static int const TodoLimitAfterDays = 5;
 
 @implementation ToDoEditViewController
 

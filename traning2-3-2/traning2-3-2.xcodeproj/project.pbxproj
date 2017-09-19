@@ -301,6 +301,7 @@
 				TargetAttributes = {
 					918390821F6BDDA300865653 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = QPFQU7UXYF;
 						ProvisioningStyle = Automatic;
 					};
 					9183909B1F6BDDA300865653 = {
@@ -673,6 +674,7 @@
 			baseConfigurationReference = C1DE25724DF210D1C213E193 /* Pods-traning2-3-2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QPFQU7UXYF;
 				INFOPLIST_FILE = "traning2-3-2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.st-ventures.traning2-3-2";
@@ -685,6 +687,7 @@
 			baseConfigurationReference = 9A8DAD28B8A37541642ED595 /* Pods-traning2-3-2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QPFQU7UXYF;
 				INFOPLIST_FILE = "traning2-3-2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.st-ventures.traning2-3-2";

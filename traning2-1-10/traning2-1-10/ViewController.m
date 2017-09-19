@@ -9,12 +9,14 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) NSArray *cardImagesNameArray;
-@property (strong, nonatomic) NSArray *cardTestsArray;
+@property (strong, nonatomic) NSArray *cardTextsArray;
 
 @end
 
 static const NSUInteger NumberOfSection = 1;
+static NSString *const CellIdentifier = @"tableCell";
 
 @implementation ViewController
 
@@ -24,7 +26,7 @@ static const NSUInteger NumberOfSection = 1;
     self.mainTableView.estimatedRowHeight = 70;
     self.mainTableView.rowHeight = UITableViewAutomaticDimension;
     
-    [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableCell"];
+    [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
     
     //プロジェクト内のファイルにアクセスできるオブジェクトを宣言
     NSBundle *bundle = [NSBundle mainBundle];
@@ -34,7 +36,7 @@ static const NSUInteger NumberOfSection = 1;
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
     // キー値を元に各自データリストを取得
     self.cardImagesNameArray = [dic objectForKey:@"CardImage"];
-    self.cardTestsArray = [dic objectForKey:@"CardText"];
+    self.cardTextsArray = [dic objectForKey:@"CardText"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,15 +51,13 @@ static const NSUInteger NumberOfSection = 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return MIN(self.cardImagesNameArray.count, self.cardTestsArray.count);
+    return MIN(self.cardImagesNameArray.count, self.cardTextsArray.count);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"tableCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = self.cardTestsArray[indexPath.row];
+    cell.textLabel.text = self.cardTextsArray[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:self.cardImagesNameArray[indexPath.row]];
 
     return cell;

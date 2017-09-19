@@ -50,7 +50,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mainTableView" destination="MyN-A4-AzG" id="EMK-W0-kFw"/>
+                        <outlet property="mainTableView" destination="MyN-A4-AzG" id="PrH-NF-qKo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

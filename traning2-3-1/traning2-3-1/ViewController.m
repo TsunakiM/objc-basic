@@ -37,6 +37,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *doubleUserDefaultChangeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *stringUserDefaultChangeBtn;
 
+// userData propertyで持つ必要は無い
+// 一意に決まる値やクラスは、propertyにしない方がいい。
 @property NSUserDefaults *userData;
 @property NSArray *stringArray;
 

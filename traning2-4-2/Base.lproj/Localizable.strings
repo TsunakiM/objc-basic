@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  traning2-4-2
+
+  Created by 増田紘宜 on 2017/09/19.
+  Copyright © 2017年 TsunakiMasuda. All rights reserved.
+*/
+
+"weatherCheckBtn" = "天気を表示する";

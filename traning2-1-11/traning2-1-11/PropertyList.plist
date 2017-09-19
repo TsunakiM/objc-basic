@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SectionTitleList</key>
+	<array>
+		<string>Humans</string>
+		<string>Spells</string>
+	</array>
+	<key>HumanCardImageName</key>
+	<array>
+		<string>Liliana</string>
+		<string>Lovisa</string>
+		<string>SnapcasterMage</string>
+	</array>
+	<key>HumanCardText</key>
+	<array>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </string>
+		<string>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+	</array>
+	<key>SpellCardImageName</key>
+	<array>
+		<string>Damnation</string>
+		<string>Oblivion</string>
+	</array>
+	<key>SpellCardText</key>
+	<array>
+		<string>Lorem ipsum</string>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+	</array>
+</dict>
+</plist>

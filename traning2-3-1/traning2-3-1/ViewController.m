@@ -37,9 +37,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *doubleUserDefaultChangeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *stringUserDefaultChangeBtn;
 
-// userData propertyで持つ必要は無い
+// userDataは、propertyで持つ必要は無い（@property NSUserDefaults *userData;）
 // 一意に決まる値やクラスは、propertyにしない方がいい。
-@property NSUserDefaults *userData;
 @property NSArray *stringArray;
 
 @end
@@ -55,20 +54,21 @@ static NSString * const stringUserDefaultKey = @"stringUserDefault";
     [super viewDidLoad];
     
     // UserDefaultsファイルの読み込み
-    self.userData = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userData = [NSUserDefaults standardUserDefaults];
     // 初回起動かどうかのチェック
-    if ([self.userData boolForKey:firstAccessKey]) {
+    if ([userData boolForKey:firstAccessKey]) {
         // 初回起動の場合の処理
         self.firstAccessResponseLabel.text = [[NSBundle mainBundle]localizedStringForKey:@"notFirstAccessString"
                                                                                    value:nil
                                                                                    table:@"Localizable"];
     } else {
         // 二回目以降の起動の場合の処理
-        [self.userData setBool:YES forKey:firstAccessKey];
-        [self.userData synchronize];
-        self.firstAccessResponseLabel.text = [[NSBundle mainBundle]localizedStringForKey:@"firstAccessString"
-                                                                                   value:nil
-                                                                                   table:@"Localizable"];
+        [userData setBool:YES forKey:firstAccessKey];
+        [userData synchronize];
+        self.firstAccessResponseLabel.text = [[NSBundle mainBundle]
+                                              localizedStringForKey:@"firstAccessString"
+                                                              value:nil
+                                                              table:@"Localizable"];
     }
     
     self.stringArray = @[@"りんご", @"バナナ", @"みかん", @"いちご", @"りんご"];
@@ -89,43 +89,57 @@ static NSString * const stringUserDefaultKey = @"stringUserDefault";
 }
 // Int型の確認
 - (IBAction)intLordBtn:(id)sender {
-    if([self.userData integerForKey:intUserDefaultkey]) {
-        self.intUserDefaultLabel.text = [NSString stringWithFormat:@"%zd", [self.userData integerForKey:intUserDefaultkey]];
+    // UserDefaultsファイルの読み込み
+    NSUserDefaults *userData = [NSUserDefaults standardUserDefaults];
+    if([userData integerForKey:intUserDefaultkey]) {
+        self.intUserDefaultLabel.text = [NSString stringWithFormat:@"%zd", [userData integerForKey:intUserDefaultkey]];
     }
 }
+
 // Int型の変更・保存
 - (IBAction)intChangeBtn:(id)sender {
+    // UserDefaultsファイルの読み込み
+    NSUserDefaults *userData = [NSUserDefaults standardUserDefaults];
     int randomNumber = (int)(arc4random_uniform(100));
-    [self.userData setInteger:randomNumber forKey:intUserDefaultkey];
+    [userData setInteger:randomNumber forKey:intUserDefaultkey];
     NSLog(@"SetInt: %zd", randomNumber);
-    [self.userData synchronize];
+    [userData synchronize];
     
 }
+
 // Double型の確認
 - (IBAction)doubleLordBtn:(id)sender {
-    if([self.userData doubleForKey:doubleUserDefaultKey]) {
-        self.doubleUserDefaultLabel.text = [NSString stringWithFormat:@"%g", [self.userData doubleForKey:doubleUserDefaultKey]];
+    // UserDefaultsファイルの読み込み
+    NSUserDefaults *userData = [NSUserDefaults standardUserDefaults];
+    if([userData doubleForKey:doubleUserDefaultKey]) {
+        self.doubleUserDefaultLabel.text = [NSString stringWithFormat:@"%g", [userData doubleForKey:doubleUserDefaultKey]];
     }
 }
 // Double型のセット・保存
 - (IBAction)doubleChangeBtn:(id)sender {
+    // UserDefaultsファイルの読み込み
+    NSUserDefaults *userData = [NSUserDefaults standardUserDefaults];
     double forSetDouble = 123.456;
-    [self.userData setDouble:forSetDouble forKey:doubleUserDefaultKey];
+    [userData setDouble:forSetDouble forKey:doubleUserDefaultKey];
     NSLog(@"SetDouble: %g", forSetDouble);
-    [self.userData synchronize];
+    [userData synchronize];
 }
 // String型の確認
 - (IBAction)stringLordBtn:(id)sender {
-    if([self.userData objectForKey:stringUserDefaultKey]) {
-        self.stringUserDefaultLabel.text = [self.userData objectForKey:stringUserDefaultKey];
+    // UserDefaultsファイルの読み込み
+    NSUserDefaults *userData = [NSUserDefaults standardUserDefaults];
+    if([userData objectForKey:stringUserDefaultKey]) {
+        self.stringUserDefaultLabel.text = [userData objectForKey:stringUserDefaultKey];
     }
 }
 // String型の変更・保存
 - (IBAction)stringChangeBtn:(id)sender {
+    // UserDefaultsファイルの読み込み
+    NSUserDefaults *userData = [NSUserDefaults standardUserDefaults];
     int randomNum = (int)(arc4random_uniform((uint32_t)self.stringArray.count));
-    [self.userData setObject:self.stringArray[randomNum] forKey:stringUserDefaultKey];
+    [userData setObject:self.stringArray[randomNum] forKey:stringUserDefaultKey];
     NSLog(@"SetString: %@", self.stringArray[randomNum]);
-    [self.userData synchronize];
+    [userData synchronize];
 }
 
 @end

@@ -8,10 +8,10 @@
 
 #import "ViewController.h"
 #import "WeatherAPIModel.h"
+#import "CreateLocalizableString.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) UIAlertController *alertController;
-
 
 @end
 
@@ -30,10 +30,11 @@
 
 // アラートコントローラーとアクションシートを用意
 - (void)setAlertController {
+    CreateLocalizableString *createLocalizableString = [CreateLocalizableString new];
     // アラートコントローラーの生成
     self.alertController =
-    [UIAlertController alertControllerWithTitle:[[NSBundle mainBundle]localizedStringForKey:@"selectDayString" value:nil table:@"Localizable"]
-                                        message:[[NSBundle mainBundle]localizedStringForKey:@"whenWeatherShowStoring" value:nil table:@"Localizable"]
+    [UIAlertController alertControllerWithTitle:[createLocalizableString localizableString:@"selectDayString"]
+                                        message:[createLocalizableString localizableString:@"whenWeatherShowStoring"]
                                  preferredStyle:UIAlertControllerStyleActionSheet];
     // コントローラにアクションを追加
     WeatherAPIModel *weatherAPIModel = [WeatherAPIModel new];
@@ -42,6 +43,8 @@
     [self.alertController addAction:[weatherAPIModel createSelectAction:afterTomorrow]];
     [self.alertController addAction:[weatherAPIModel createSelectAction:cancel]];
 }
+
+
 
 - (IBAction)outputWeatherForecastButton:(id)sender {
     // アクションシートを出力

@@ -7,10 +7,11 @@
 //
 
 #import "WeatherAPIModel.h"
+
+#import "CreateLocalizableString.h"
 #import "AFNetworking.h"
 
 @interface WeatherAPIModel ()
-@property NSString *whetherResult;
 
 @end
 
@@ -54,19 +55,20 @@ static NSString *const apiUrl = @"http://weather.livedoor.com/forecast/webservic
 
 - (UIAlertAction *)createSelectAction:(int)actionNumber {
     // 当日の天気予報を出力するアクションを作成
+    CreateLocalizableString *createLocalizableString = [CreateLocalizableString new];
     NSString *actionName;
     switch (actionNumber) {
         case today:
-            actionName = [[NSBundle mainBundle]localizedStringForKey:@"todayString" value:nil table:@"Localizable"];
+            actionName = [createLocalizableString localizableString:@"todayString"];
             break;
         case tomorrow:
-            actionName = [[NSBundle mainBundle]localizedStringForKey:@"tomorrowString" value:nil table:@"Localizable"];
+            actionName = [createLocalizableString localizableString:@"tomorrowString"];
             break;
         case afterTomorrow:
-            actionName = [[NSBundle mainBundle]localizedStringForKey:@"afterTomorrowString" value:nil table:@"Localizable"];
+            actionName = [createLocalizableString localizableString:@"afterTomorrowString"];
             break;
         case cancel:
-            actionName = [[NSBundle mainBundle]localizedStringForKey:@"cancelString" value:nil table:@"Localizable"];
+            actionName = [createLocalizableString localizableString:@"cancelString"];
             break;
         default:
             break;

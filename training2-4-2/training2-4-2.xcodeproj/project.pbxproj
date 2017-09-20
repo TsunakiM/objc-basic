@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56F3520DC74010593CF704EF /* libPods-training2-4-2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE9E917FA7F47FD57DE0C99 /* libPods-training2-4-2.a */; };
+		9111079E1F725D9900FF5252 /* CreateLocalizableString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9111079D1F725D9900FF5252 /* CreateLocalizableString.m */; };
 		919D74C61F72202100C3863F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 919D74C51F72202100C3863F /* main.m */; };
 		919D74C91F72202100C3863F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 919D74C81F72202100C3863F /* AppDelegate.m */; };
 		919D74CC1F72202100C3863F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919D74CB1F72202100C3863F /* ViewController.m */; };
@@ -44,6 +45,8 @@
 		430389E85E66675998FCBDC9 /* Pods-training2-4-2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-training2-4-2.release.xcconfig"; path = "Pods/Target Support Files/Pods-training2-4-2/Pods-training2-4-2.release.xcconfig"; sourceTree = "<group>"; };
 		7BE9E917FA7F47FD57DE0C99 /* libPods-training2-4-2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-training2-4-2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		882B1F82161478D2698368D4 /* Pods-training2-4-2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-training2-4-2UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-training2-4-2UITests/Pods-training2-4-2UITests.release.xcconfig"; sourceTree = "<group>"; };
+		9111079C1F725D9900FF5252 /* CreateLocalizableString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateLocalizableString.h; sourceTree = "<group>"; };
+		9111079D1F725D9900FF5252 /* CreateLocalizableString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateLocalizableString.m; sourceTree = "<group>"; };
 		919D74C11F72202100C3863F /* training2-4-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "training2-4-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		919D74C51F72202100C3863F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		919D74C71F72202100C3863F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				919D74C81F72202100C3863F /* AppDelegate.m */,
 				919D74CA1F72202100C3863F /* ViewController.h */,
 				919D74CB1F72202100C3863F /* ViewController.m */,
+				9111079C1F725D9900FF5252 /* CreateLocalizableString.h */,
+				9111079D1F725D9900FF5252 /* CreateLocalizableString.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -285,7 +290,7 @@
 		919D74B91F72202100C3863F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = TsunakiMasuda;
 				TargetAttributes = {
 					919D74C01F72202100C3863F = {
@@ -504,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9111079E1F725D9900FF5252 /* CreateLocalizableString.m in Sources */,
 				919D74CC1F72202100C3863F /* ViewController.m in Sources */,
 				919D74C91F72202100C3863F /* AppDelegate.m in Sources */,
 				919D74C61F72202100C3863F /* main.m in Sources */,
@@ -583,7 +589,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -591,7 +599,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -633,7 +645,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -641,7 +655,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -9,6 +9,7 @@
 #import "CustomCellCollectionViewCell.h"
 
 @implementation CustomCellCollectionViewCell
-
+// グローバル定数化したCellIdentifierの中身を定義
+NSString* const CellIdentifier = @"Cell";
 
 @end

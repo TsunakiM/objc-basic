@@ -12,6 +12,9 @@
 // デフォルトのCollectionViewCellは画像を保持できないので、カスタムセルで設定。
 // xibで設定したセルの要素とOutlet接続する。
 @property (weak, nonatomic) IBOutlet UIImageView *cellImage;
+// カスタムセルにIdentifierを設定したので、それをグローバル定数に。
+// 定数は、関連のあるところに記述する。
+extern NSString* const CellIdentifier;
 
 @end
 

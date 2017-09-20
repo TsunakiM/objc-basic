@@ -16,8 +16,7 @@
 @property NSArray *nationalFlagIconArray;
 
 @end
-// カスタムセルの方にIdentifierを設定したので、それを定数に。
-static NSString* const CellIdentifier = @"Cell";
+
 /*~~~ セルのステータスの定数 ~~~*/
 static const NSUInteger CellSpace = 15;
 static const NSUInteger NumberOfSectionsInCollectionView = 1;
@@ -39,7 +38,9 @@ static const NSUInteger NumberOfSellSpace = 4;
     // 表示用の画像のファイル名
     self.nationalFlagIconArray = @[@"Algeria", @"Australia", @"Austria", @"Bangladesh", @"Canada", @"Israel", @"Japan", @"Micronesia", @"UK"];
     // Nibファイル（xib）を接続
-    [self.mainCollectionView registerNib:[UINib nibWithNibName:@"CustomCellCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:CellIdentifier];
+    [self.mainCollectionView registerNib:[UINib nibWithNibName:@"CustomCellCollectionViewCell"
+                                                        bundle:nil]
+              forCellWithReuseIdentifier: CellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,7 +69,9 @@ static const NSUInteger NumberOfSellSpace = 4;
 // セルを表示させる
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     // デフォルトのCollectionViewCellは、画像を保持するプロパティがないので、カスタムクラスを作成してインスタンス化。
-    CustomCellCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    CustomCellCollectionViewCell *cell = [collectionView
+                                          dequeueReusableCellWithReuseIdentifier:CellIdentifier
+                                                                    forIndexPath:indexPath];
     cell.cellImage.image= [UIImage imageNamed:self.nationalFlagIconArray[indexPath.row]];
      
     return cell;

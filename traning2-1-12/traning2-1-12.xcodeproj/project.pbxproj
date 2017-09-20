@@ -83,6 +83,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		918391AF1F71332200865653 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91E662831F68D5EE00A071FB /* Main.storyboard */,
+				91E662B01F69221A00A071FB /* CustomCellCollectionViewCell.xib */,
+				91E662881F68D5EE00A071FB /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		918391B01F71334F00865653 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				91E6627D1F68D5EE00A071FB /* AppDelegate.h */,
+				91E6627E1F68D5EE00A071FB /* AppDelegate.m */,
+				91E662801F68D5EE00A071FB /* ViewController.h */,
+				91E662811F68D5EE00A071FB /* ViewController.m */,
+				91E662AE1F69221A00A071FB /* CustomCellCollectionViewCell.h */,
+				91E662AF1F69221A00A071FB /* CustomCellCollectionViewCell.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		91E6626E1F68D5EE00A071FB = {
 			isa = PBXGroup;
 			children = (
@@ -106,17 +129,10 @@
 		91E662791F68D5EE00A071FB /* traning2-1-12 */ = {
 			isa = PBXGroup;
 			children = (
-				91E6627D1F68D5EE00A071FB /* AppDelegate.h */,
-				91E6627E1F68D5EE00A071FB /* AppDelegate.m */,
-				91E662801F68D5EE00A071FB /* ViewController.h */,
-				91E662811F68D5EE00A071FB /* ViewController.m */,
-				91E662831F68D5EE00A071FB /* Main.storyboard */,
+				918391AF1F71332200865653 /* Views */,
+				918391B01F71334F00865653 /* Controllers */,
 				91E662861F68D5EE00A071FB /* Assets.xcassets */,
-				91E662881F68D5EE00A071FB /* LaunchScreen.storyboard */,
 				91E6628B1F68D5EE00A071FB /* Info.plist */,
-				91E662AE1F69221A00A071FB /* CustomCellCollectionViewCell.h */,
-				91E662AF1F69221A00A071FB /* CustomCellCollectionViewCell.m */,
-				91E662B01F69221A00A071FB /* CustomCellCollectionViewCell.xib */,
 				91E6627A1F68D5EE00A071FB /* Supporting Files */,
 			);
 			path = "traning2-1-12";
@@ -519,6 +535,7 @@
 				91E662A61F68D5EE00A071FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		91E662A71F68D5EE00A071FB /* Build configuration list for PBXNativeTarget "traning2-1-12Tests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +544,7 @@
 				91E662A91F68D5EE00A071FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		91E662AA1F68D5EE00A071FB /* Build configuration list for PBXNativeTarget "traning2-1-12UITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +553,7 @@
 				91E662AC1F68D5EE00A071FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

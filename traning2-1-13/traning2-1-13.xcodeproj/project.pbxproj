@@ -118,8 +118,8 @@
 				91FA62AB1F6A16200010DD9B /* ViewController.h */,
 				91FA62AC1F6A16200010DD9B /* ViewController.m */,
 				91FA62AE1F6A16200010DD9B /* Main.storyboard */,
-				91FA62B11F6A16200010DD9B /* Assets.xcassets */,
 				91FA62B31F6A16200010DD9B /* LaunchScreen.storyboard */,
+				91FA62B11F6A16200010DD9B /* Assets.xcassets */,
 				91FA62B61F6A16200010DD9B /* Info.plist */,
 				91FA62E41F6A54100010DD9B /* CustomCell */,
 				91FA62E51F6A542A0010DD9B /* CustomSection */,
@@ -549,6 +549,7 @@
 				91FA62D11F6A16210010DD9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		91FA62D21F6A16210010DD9B /* Build configuration list for PBXNativeTarget "traning2-1-13Tests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +558,7 @@
 				91FA62D41F6A16210010DD9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		91FA62D51F6A16210010DD9B /* Build configuration list for PBXNativeTarget "traning2-1-13UITests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +567,7 @@
 				91FA62D71F6A16210010DD9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

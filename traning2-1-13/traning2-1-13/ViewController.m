@@ -19,9 +19,9 @@
 
 @end
 
-// カスタムセル/カスタムセクションのIdentifierを設定したので、それを定数に。
-static NSString* const CellIdentifier = @"CustumCell";
+// カスタムセクションのIdentifierを設定したので、それを定数に。
 static NSString* const SectionIdentifier = @"HeaderView";
+
 /*~~~ セルのステータスの定数 ~~~*/
 // １セクションに存在するセルの数
 static const NSUInteger NumberOfItemsInSection = 2;

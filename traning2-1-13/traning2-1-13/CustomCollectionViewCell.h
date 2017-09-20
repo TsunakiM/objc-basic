@@ -10,5 +10,6 @@
 
 @interface CustomCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *customCellImageView;
+extern NSString* const CellIdentifier;
 
 @end

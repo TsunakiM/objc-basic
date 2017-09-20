@@ -9,6 +9,7 @@
 #import "CustomCollectionViewCell.h"
 
 @implementation CustomCollectionViewCell
+NSString* const CellIdentifier = @"CustumCell";
 
 - (void)awakeFromNib {
     [super awakeFromNib];

@@ -141,13 +141,10 @@
 		919D750F1F72495C00C3863F /* traning2-4-3 */ = {
 			isa = PBXGroup;
 			children = (
-				919D75131F72495C00C3863F /* AppDelegate.h */,
-				919D75141F72495C00C3863F /* AppDelegate.m */,
-				919D75161F72495C00C3863F /* ViewController.h */,
-				919D75171F72495C00C3863F /* ViewController.m */,
-				919D75191F72495C00C3863F /* Main.storyboard */,
+				919D75451F724A7100C3863F /* Views */,
+				919D75441F724A6600C3863F /* Controllers */,
+				919D75431F724A5800C3863F /* Models */,
 				919D751C1F72495C00C3863F /* Assets.xcassets */,
-				919D751E1F72495C00C3863F /* LaunchScreen.storyboard */,
 				919D75211F72495C00C3863F /* Info.plist */,
 				919D75101F72495C00C3863F /* Supporting Files */,
 			);
@@ -178,6 +175,33 @@
 				919D75371F72495C00C3863F /* Info.plist */,
 			);
 			path = "traning2-4-3UITests";
+			sourceTree = "<group>";
+		};
+		919D75431F724A5800C3863F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		919D75441F724A6600C3863F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				919D75131F72495C00C3863F /* AppDelegate.h */,
+				919D75141F72495C00C3863F /* AppDelegate.m */,
+				919D75161F72495C00C3863F /* ViewController.h */,
+				919D75171F72495C00C3863F /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		919D75451F724A7100C3863F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				919D75191F72495C00C3863F /* Main.storyboard */,
+				919D751E1F72495C00C3863F /* LaunchScreen.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -711,6 +735,7 @@
 				919D753C1F72495C00C3863F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		919D753D1F72495C00C3863F /* Build configuration list for PBXNativeTarget "traning2-4-3Tests" */ = {
 			isa = XCConfigurationList;
@@ -719,6 +744,7 @@
 				919D753F1F72495C00C3863F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		919D75401F72495C00C3863F /* Build configuration list for PBXNativeTarget "traning2-4-3UITests" */ = {
 			isa = XCConfigurationList;
@@ -727,6 +753,7 @@
 				919D75421F72495C00C3863F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

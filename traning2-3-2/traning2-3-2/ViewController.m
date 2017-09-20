@@ -23,10 +23,11 @@
 - (void)createDataSource;
 - (void)numberOfSell;
 - (void)refreshTableCell;
+- (void)deleteTableCell;
 - (int)countId;
 
 typedef NS_ENUM(NSUInteger, todoListENUM) {
-    todo_id = 0,
+    todo_id,
     todo_title,
     limit_date
 };
@@ -40,6 +41,7 @@ NSString *const ToDoDatabaseTableName = @"tr_todo";
 static NSString *const ToDoShowCellNibName = @"CustomTableViewCell";
 static NSString *const ToDoShowCellIdentifer = @"todoCell";
 static NSString *const InitialActivationCheckKey = @"InitialActivation";
+static const CGFloat HeightForRowAtIndexPath = 80;
 
 @implementation ViewController
 
@@ -73,11 +75,21 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
     [self.mainTableView reloadData];
 }
 
+// テーブルの削除
+- (void)deleteTableCell {
+    // セルの数を決定する。
+    // カウントを初期化して、
+    self.cellCount = 0;
+    // 表示するセルの数をカウントし、
+    [self numberOfSell];
+    // DataSourceを作成する。
+    [self createDataSource];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 // カラムの作成（初回起動時に呼んでくる用）
 - (void)createTable {
@@ -152,7 +164,6 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
     [db close];
     // 数えた値を返す
 }
-
 
 // DBと接続するメソッド（あとでModelへ）
 - (id)connectDataBase:(NSString *)dbName {
@@ -230,7 +241,6 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         FMDatabase *db = [self connectDataBase:ToDoDatabaseName];
-        NSLog(@"%@", self.todoListArray[indexPath.row][todo_id]);
         NSString *deleteTarget = [[NSString alloc] initWithFormat:@""
                                   "UPDATE "
                                     "tr_todo "
@@ -243,13 +253,15 @@ static NSString *const InitialActivationCheckKey = @"InitialActivation";
         [db executeUpdate:deleteTarget];
         [db close];
     }
-    // wont:行を消す用のメソッドもあるよ！
-    [self refreshTableCell];
+    // 削除用のメソッドを呼び出し。
+    [self deleteTableCell];
+    // 削除アニメーション + 現在保持するデータに更新。
+    [self.mainTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 // セルの幅（固定）
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return HeightForRowAtIndexPath;
 }
 
 @end

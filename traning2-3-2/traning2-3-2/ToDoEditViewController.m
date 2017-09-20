@@ -35,7 +35,13 @@ static int const TodoLimitAfterDays = 5;
     ViewController *viewController = [[ViewController alloc] init];
     FMDatabase *db = [viewController connectDataBase:ToDoDatabaseName];
     //count文の作成
-    NSString *countTodoId = [[NSString alloc] initWithFormat:@"select count(*) as count from tr_todo where todo_id"];
+    NSString *countTodoId = [[NSString alloc] initWithFormat:@""
+                             "SELECT "
+                                "count(*) as count "
+                             "FROM "
+                                "tr_todo "
+                             "WHERE "
+                                "todo_id"];
     
     // DBをオープン
     [db open];
@@ -88,24 +94,39 @@ static int const TodoLimitAfterDays = 5;
 - (void)createAleart {
     //アラートコントローラーの生成
     self.registerAlertController = [UIAlertController
-                                    alertControllerWithTitle:@"未入力"
-                                                     message:@"タイトルを入力してください。"
+                                    alertControllerWithTitle:[[NSBundle mainBundle]
+                                                              localizedStringForKey:@"noTitleAlertErrorTopString"
+                                                                              value:nil
+                                                                              table:@"Localizable"]
+                                                     message:[[NSBundle mainBundle]
+                                                              localizedStringForKey:@"noTitleAlertErrorMeinString"
+                                                                              value:nil
+                                                                              table:@"Localizable"]
                                               preferredStyle:UIAlertControllerStyleAlert];
     self.doneAlertController = [UIAlertController
-                                alertControllerWithTitle:@"登録完了"
+                                alertControllerWithTitle:[[NSBundle mainBundle]
+                                                          localizedStringForKey:@"resistSuccessAlertString"
+                                                                          value:nil
+                                                                          table:@"Localizable"]
                                                  message:nil
                                           preferredStyle:UIAlertControllerStyleAlert];
     
     // OKボタンと処理内容を用意
     UIAlertAction *okButton = [UIAlertAction
-                               actionWithTitle:@"OK"
+                               actionWithTitle:[[NSBundle mainBundle]
+                                                localizedStringForKey:@"alertOkString"
+                                                                value:nil
+                                                                table:@"Localizable"]
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction * action) {
                                }];
     
     // 登録成功の確認ログ用ボタン
     UIAlertAction *backTopButton = [UIAlertAction
-                                    actionWithTitle:@"OK"
+                                    actionWithTitle:[[NSBundle mainBundle]
+                                                     localizedStringForKey:@"alertOkString"
+                                                                     value:nil
+                                                                     table:@"Localizable"]
                                     style:UIAlertActionStyleDefault
                                     handler:^(UIAlertAction * action) {
                                         self.todoNameTextView.text = @"";
@@ -120,7 +141,7 @@ static int const TodoLimitAfterDays = 5;
 // 登録アクション
 - (void)registerAction {
     // !!!!!!!!!! viewControllerじゃなくて、自身をインスタンス化でOK　!!!!!!!!!!!!!!
-    ViewController *viewController = [[ToDoEditViewController alloc] init];
+    ViewController *viewController = [[ViewController alloc] init];
     FMDatabase *db = [viewController connectDataBase:ToDoDatabaseName];
     
     // todoIdをセット（0をセットまたは+1で返す）

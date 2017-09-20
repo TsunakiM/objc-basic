@@ -23,6 +23,7 @@
 		9183911A1F6F85E500865653 /* FMDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 918391191F6F85E500865653 /* FMDBModel.m */; };
 		918391201F6F868D00865653 /* ToDoEditView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9183911F1F6F868D00865653 /* ToDoEditView.storyboard */; };
 		918391271F6F8AEC00865653 /* ToDoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 918391261F6F8AEC00865653 /* ToDoEditViewController.m */; };
+		919D74B51F720A6C00C3863F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 919D74B71F720A6C00C3863F /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,9 @@
 		9183911F1F6F868D00865653 /* ToDoEditView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ToDoEditView.storyboard; sourceTree = "<group>"; };
 		918391251F6F8AEC00865653 /* ToDoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoEditViewController.h; sourceTree = "<group>"; };
 		918391261F6F8AEC00865653 /* ToDoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoEditViewController.m; sourceTree = "<group>"; };
+		919D74B31F7209F300C3863F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		919D74B41F7209F300C3863F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		919D74B61F720A6C00C3863F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9A8DAD28B8A37541642ED595 /* Pods-traning2-3-2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traning2-3-2.release.xcconfig"; path = "Pods/Target Support Files/Pods-traning2-3-2/Pods-traning2-3-2.release.xcconfig"; sourceTree = "<group>"; };
 		C1DE25724DF210D1C213E193 /* Pods-traning2-3-2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traning2-3-2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-traning2-3-2/Pods-traning2-3-2.debug.xcconfig"; sourceTree = "<group>"; };
 		C71F04EF27E02F9165F1E249 /* libPods-traning2-3-2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-traning2-3-2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +149,7 @@
 				9183910D1F6E44A600865653 /* Controllers */,
 				9183910F1F6EAF8A00865653 /* Models */,
 				918390921F6BDDA300865653 /* Assets.xcassets */,
+				919D74B71F720A6C00C3863F /* Localizable.strings */,
 				918390971F6BDDA300865653 /* Info.plist */,
 				918390861F6BDDA300865653 /* Supporting Files */,
 			);
@@ -342,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				918390961F6BDDA300865653 /* LaunchScreen.storyboard in Resources */,
+				919D74B51F720A6C00C3863F /* Localizable.strings in Resources */,
 				918390931F6BDDA300865653 /* Assets.xcassets in Resources */,
 				918391141F6EAFBB00865653 /* CustomTableViewCell.xib in Resources */,
 				918390911F6BDDA300865653 /* Main.storyboard in Resources */,
@@ -562,6 +568,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				918390901F6BDDA300865653 /* Base */,
+				919D74B31F7209F300C3863F /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -570,8 +577,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				918390951F6BDDA300865653 /* Base */,
+				919D74B41F7209F300C3863F /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		919D74B71F720A6C00C3863F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				919D74B61F720A6C00C3863F /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -581,6 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -630,6 +647,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

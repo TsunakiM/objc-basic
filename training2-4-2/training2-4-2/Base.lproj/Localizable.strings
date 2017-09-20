@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  training2-4-2
+
+  Created by 増田紘宜 on 2017/09/20.
+  Copyright © 2017年 TsunakiMasuda. All rights reserved.
+*/
+"selectDayString" = "日付選択";
+"whenWeatherShowStoring" = "いつの予報を出力しますか？";
+"todayString" = "今日";
+"tomorrowString" = "明日";
+"afterTomorrowString" = "明後日";
+"cancelString" = "キャンセル";

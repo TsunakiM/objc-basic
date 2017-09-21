@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付を選んでください。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ex4-MO-sqr" userLabel="dateLabel">
+                                <rect key="frame" x="46" y="70" width="283" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnZ-vr-F1W" userLabel="DoneBtn">
+                                <rect key="frame" x="309" y="398" width="50" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="irp-qt-Ric"/>
+                                    <constraint firstAttribute="height" constant="35" id="nie-t3-lNf"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="obC-cE-beW"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rE7-bE-wbG" userLabel="mainDatePicker">
+                                <rect key="frame" x="19" y="441" width="338" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="526451415.47296">
+                                    <!--2017-09-07 04:30:15 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
+                                <connections>
+                                    <action selector="didChangeDatePicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="USv-Rr-bZ5"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rE7-bE-wbG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="6gs-v6-djh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ex4-MO-sqr" secondAttribute="trailing" constant="30" id="8fk-CU-jbj"/>
+                            <constraint firstItem="rE7-bE-wbG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BFm-Dn-5No"/>
+                            <constraint firstItem="JnZ-vr-F1W" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DDC-qp-ZJk"/>
+                            <constraint firstItem="Ex4-MO-sqr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="FjF-Km-gyu"/>
+                            <constraint firstItem="rE7-bE-wbG" firstAttribute="top" secondItem="JnZ-vr-F1W" secondAttribute="bottom" constant="8" id="GMJ-Jx-8wh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rE7-bE-wbG" secondAttribute="bottom" constant="10" id="K3Z-dQ-Nzm"/>
+                            <constraint firstItem="Ex4-MO-sqr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="dVC-MR-Ybt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="Ex4-MO-sqr" id="2Mf-sh-xVy"/>
+                        <outlet property="doneBtnStatus" destination="JnZ-vr-F1W" id="gNV-ts-cTl"/>
+                        <outlet property="mainDatePicker" destination="rE7-bE-wbG" id="oMA-Rg-G7p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="131.78410794602701"/>
+        </scene>
+    </scenes>
+</document>

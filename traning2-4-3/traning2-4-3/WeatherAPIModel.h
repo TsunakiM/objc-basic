@@ -9,24 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface WeatherAPIModel : NSObject
-@property (strong, nonatomic) NSMutableArray *weatherDataArray;
-@property (strong, nonatomic) NSString *weatherDescriptionText;
-@property (strong, nonatomic) NSMutableArray *weatherIconURLArray;
-//- (void)weatherOutput:(int)indexNumber;
-- (NSArray *)prepareWeatherData:(int)indexNumber;
-- (NSString *)prepareWeatherIconURL:(int)indexNumber;
-- (NSString *)prepareWeatherDescrioption;
-
-typedef NS_ENUM(int, ActionType) {
-    today,
-    tomorrow,
-    afterTomorrow,
-    cancel
-};
-
-typedef NS_ENUM(int, WeatherAPIContent) {
-    WeatherDate,
-    WheatherTelop,
-};
+- (void)getWeatherData:(void (^)(NSDictionary *dictionary))block;
 
 @end

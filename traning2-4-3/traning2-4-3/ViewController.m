@@ -10,13 +10,24 @@
 
 #import "CustomCell.h"
 #import "WeatherAPIModel.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSUInteger numberOfRowsInSection;
-@property NSMutableArray *weatherDataArray;
-@property NSMutableArray *weatherIconURLArray;
-@property NSString *weatherDiscriptionText;
+@property (strong, nonatomic) NSMutableArray *weatherDataArray;
+@property (strong, nonatomic) NSMutableArray *weatherIconURLArray;
+@property (strong, nonatomic) NSString *weatherDiscriptionText;
+
+typedef NS_ENUM(int, ActionType) {
+    today,
+    tomorrow,
+    afterTomorrow,
+};
+
+typedef NS_ENUM(int, WeatherAPIContent) {
+    WeatherDate,
+    WheatherTelop,
+};
 
 @end
 
@@ -26,20 +37,33 @@ static const CGFloat CellEstimatedRowHeight = 80;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+#pragma mark API取得と値のセット
     WeatherAPIModel *apiModel = [WeatherAPIModel new];
     self.weatherDataArray = [@[] mutableCopy];
     self.weatherIconURLArray = [@[] mutableCopy];
-    for (int i = 0; i < 3; i++) {
-        NSLog(@"for文%zd回目" ,i);
-        [self.weatherDataArray addObject:[apiModel prepareWeatherData:i]];
-        [self.weatherIconURLArray addObject:[apiModel prepareWeatherIconURL:i]];
-        NSLog(@"%@", self.weatherIconURLArray);
-    }
-    self.weatherDiscriptionText = [apiModel prepareWeatherDescrioption];
-
-    NSLog(@"%zd", self.numberOfRowsInSection);
-    [self setTableView];
+    
+    [apiModel getWeatherData:^(NSDictionary *weatherAPIDictionary){
+        if(!weatherAPIDictionary) {
+            NSLog(@"API取得失敗");
+        } else {
+            for (int i = 0; i < 3; i++) {
+                NSDictionary *forecasts = weatherAPIDictionary[@"forecasts"][i];
+                // 日付と天気（文字列）を取得し、二重配列で格納
+                NSArray *dataArray = @[forecasts[@"date"], forecasts[@"telop"]];
+                [self.weatherDataArray addObject:dataArray];
+                // 画像のURLを取得し、配列に格納
+                NSDictionary *image = forecasts[@"image"];
+                [self.weatherIconURLArray addObject:image[@"url"]];
+            }
+            NSDictionary *description = weatherAPIDictionary[@"description"];
+            self.weatherDiscriptionText = description[@"text"];
+            
+            // 先にTableViewの描画コードが走るので、API取得を待ってから再計算とリロードをかける。
+            [self setTableView];
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 
@@ -55,6 +79,7 @@ static const CGFloat CellEstimatedRowHeight = 80;
     return image;
 }
 
+#pragma mark - TableView周りの設定
 // テーブルビューを設定
 - (void)setTableView {
     // nibファイルの登録
@@ -73,15 +98,15 @@ static const CGFloat CellEstimatedRowHeight = 80;
 
 // セルの内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"セルの内容設定%zd回目", indexPath.row);
     CustomCell *cell = [tableView dequeueReusableCellWithIdentifier: CustomCellReuseIdentifier];
-    cell.customCellImage.image = [self createImageByURL:self.weatherIconURLArray[indexPath.row]];
+    
+    [cell.customCellImage setImageWithURL:[NSURL URLWithString:self.weatherIconURLArray[indexPath.row]]
+              placeholderImage:[UIImage imageNamed:@"placeholder"]];
     cell.customCellForecastsDate.text = self.weatherDataArray[indexPath.row][WeatherDate];
     cell.customCellForecastTitle.text = self.weatherDataArray[indexPath.row][WheatherTelop];
-    if(indexPath == today) {
-        cell.customCellDescriptionText.text = self.weatherDiscriptionText;
+    if(indexPath.row == today) {
+        cell.customCellDescriptionLabel.text = self.weatherDiscriptionText;
     }
-    
     return cell;
 }
 

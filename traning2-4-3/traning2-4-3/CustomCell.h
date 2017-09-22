@@ -13,6 +13,6 @@ extern NSString *const CustomCellReuseIdentifier;
 @property (weak, nonatomic) IBOutlet UIImageView *customCellImage;
 @property (weak, nonatomic) IBOutlet UILabel *customCellForecastsDate;
 @property (weak, nonatomic) IBOutlet UILabel *customCellForecastTitle;
-@property (weak, nonatomic) IBOutlet UILabel *customCellDescriptionText;
+@property (weak, nonatomic) IBOutlet UILabel *customCellDescriptionLabel;
 
 @end

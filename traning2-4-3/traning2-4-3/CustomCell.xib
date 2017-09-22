@@ -35,35 +35,36 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l5M-Sd-GQb">
-                        <rect key="frame" x="18" y="18" width="89.5" height="89.5"/>
+                        <rect key="frame" x="18" y="18" width="89.5" height="53.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="l5M-Sd-GQb" secondAttribute="height" multiplier="1:1" id="LmZ-Pq-h6G"/>
+                            <constraint firstAttribute="width" secondItem="l5M-Sd-GQb" secondAttribute="height" multiplier="5:3" id="JOz-GL-Gdc"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天気概要" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epC-qq-TIq">
-                        <rect key="frame" x="18" y="146.5" width="322" height="164"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sj-b1-6Xq">
+                        <rect key="frame" x="18" y="103" width="322" height="207.5"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="epC-qq-TIq" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.5" id="1y8-Wc-xoA"/>
                     <constraint firstAttribute="trailingMargin" secondItem="dHL-RB-0ZO" secondAttribute="trailing" constant="10" id="2yq-zh-L6E"/>
                     <constraint firstItem="V8L-Dx-H4I" firstAttribute="top" secondItem="dHL-RB-0ZO" secondAttribute="bottom" constant="20" id="6E9-qY-S0h"/>
-                    <constraint firstItem="epC-qq-TIq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="7DD-CW-teI"/>
                     <constraint firstItem="dHL-RB-0ZO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="BNj-3U-oM3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="0sj-b1-6Xq" secondAttribute="bottom" constant="10" id="JNv-Sr-KRV"/>
                     <constraint firstItem="l5M-Sd-GQb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="LS3-0V-gHi"/>
                     <constraint firstAttribute="trailingMargin" secondItem="V8L-Dx-H4I" secondAttribute="trailing" constant="10" id="QiJ-bh-HwW"/>
                     <constraint firstItem="l5M-Sd-GQb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="h4C-4k-eNO"/>
                     <constraint firstItem="l5M-Sd-GQb" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.25" id="jZU-pL-Iqv"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="epC-qq-TIq" secondAttribute="trailing" constant="10" id="mkM-8Y-PWj"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="epC-qq-TIq" secondAttribute="bottom" constant="10" id="p4P-SS-MVS"/>
+                    <constraint firstItem="0sj-b1-6Xq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="kPs-JT-fFj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0sj-b1-6Xq" secondAttribute="trailing" constant="10" id="qK0-tU-okJ"/>
+                    <constraint firstItem="0sj-b1-6Xq" firstAttribute="top" secondItem="V8L-Dx-H4I" secondAttribute="bottom" constant="20" id="z4R-YX-DDa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="customCellDescriptionText" destination="epC-qq-TIq" id="Hxw-R6-ONU"/>
+                <outlet property="customCellDescriptionLabel" destination="0sj-b1-6Xq" id="tIc-IN-ozO"/>
                 <outlet property="customCellForecastTitle" destination="V8L-Dx-H4I" id="uVe-qz-sJq"/>
                 <outlet property="customCellForecastsDate" destination="dHL-RB-0ZO" id="oz7-x6-13A"/>
                 <outlet property="customCellImage" destination="l5M-Sd-GQb" id="JxY-cD-p0J"/>

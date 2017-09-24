@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vRK-4K-QT3">
+                                <rect key="frame" x="5" y="30" width="365" height="487"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75E-Q1-XkH">
+                                <rect key="frame" x="10" y="617" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="21e-6C-6Sn"/>
+                                    <constraint firstAttribute="width" constant="150" id="Tkb-wn-duO"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="モノクロにする">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doMonochromeBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LUb-L9-EfI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av4-Nr-uNi">
+                                <rect key="frame" x="215" y="617" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="M27-Ah-V6y"/>
+                                    <constraint firstAttribute="width" constant="150" id="mM3-M0-zWC"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="元に戻す"/>
+                                <connections>
+                                    <action selector="returnMonochromeBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FZ6-Lr-rUm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPV-YM-ku5">
+                                <rect key="frame" x="127" y="527" width="120.5" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="0Qg-jR-bZ7"/>
+                                    <constraint firstAttribute="height" constant="60" id="7t2-ls-G4O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="カメラ起動">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraActivateBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0wn-ax-gYB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vRK-4K-QT3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="6vV-Th-Enh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="av4-Nr-uNi" secondAttribute="bottom" constant="20" id="Ez8-ic-cLi"/>
+                            <constraint firstItem="vRK-4K-QT3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="KFH-gY-BYa"/>
+                            <constraint firstItem="75E-Q1-XkH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="e0G-RH-ZkQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="av4-Nr-uNi" secondAttribute="trailing" constant="10" id="enJ-kO-tyk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="75E-Q1-XkH" secondAttribute="bottom" constant="20" id="fZ9-IN-JLA"/>
+                            <constraint firstAttribute="bottom" secondItem="vRK-4K-QT3" secondAttribute="bottom" constant="150" id="phq-h9-YYh"/>
+                            <constraint firstItem="UPV-YM-ku5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sXo-LM-4IM"/>
+                            <constraint firstItem="UPV-YM-ku5" firstAttribute="top" secondItem="vRK-4K-QT3" secondAttribute="bottom" constant="10" id="uJ4-6e-mKk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vRK-4K-QT3" secondAttribute="trailing" constant="5" id="us2-vv-HTw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="doMonochromeBtn" destination="75E-Q1-XkH" id="uhv-GE-9qs"/>
+                        <outlet property="mainImageView" destination="vRK-4K-QT3" id="jeV-rF-N8C"/>
+                        <outlet property="returnMonochromeBtn" destination="av4-Nr-uNi" id="dkn-4a-jwc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>

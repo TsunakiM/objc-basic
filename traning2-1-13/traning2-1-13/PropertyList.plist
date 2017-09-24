@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SectonName</key>
+	<array>
+		<string>BlueFlag</string>
+		<string>RedFlag</string>
+		<string>WhiteFlag</string>
+		<string>SymbolFlag</string>
+		<string>SunFlag</string>
+	</array>
+	<key>BlueFlag</key>
+	<array>
+		<string>Australia</string>
+		<string>UK</string>
+	</array>
+	<key>RedFlag</key>
+	<array>
+		<string>Canada</string>
+		<string>Austria</string>
+	</array>
+	<key>WhiteFlag</key>
+	<array>
+		<string>Micronesia</string>
+		<string>Monaco</string>
+	</array>
+	<key>SymbolFlag</key>
+	<array>
+		<string>Algeria</string>
+		<string>Israel</string>
+	</array>
+	<key>SunFlag</key>
+	<array>
+		<string>Japan</string>
+		<string>Bangladesh</string>
+	</array>
+</dict>
+</plist>

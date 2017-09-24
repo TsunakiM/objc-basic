@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--To Do Edit View Controller-->
+        <scene sceneID="WG5-TL-baU">
+            <objects>
+                <viewController storyboardIdentifier="todoEditView" id="ebv-gy-vbJ" customClass="ToDoEditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GIU-NZ-QfK"/>
+                        <viewControllerLayoutGuide type="bottom" id="n6F-ty-gF3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SqD-AG-rgb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ToDo名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w28-cu-gS2">
+                                <rect key="frame" x="36" y="111" width="303" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rvy-fL-HQx">
+                                <rect key="frame" x="36" y="151" width="303" height="116"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToDo登録" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55R-xY-qeZ">
+                                <rect key="frame" x="26" y="70" width="323" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZN-tR-eEu">
+                                <rect key="frame" x="152" y="317" width="70" height="40"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="4ZC-9q-u5L"/>
+                                    <constraint firstAttribute="height" constant="40" id="89z-wi-MPo"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="todoRegisterBtn:" destination="ebv-gy-vbJ" eventType="touchUpInside" id="Yts-Pe-kBa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Rvy-fL-HQx" firstAttribute="top" secondItem="w28-cu-gS2" secondAttribute="bottom" constant="10" id="C9g-eH-pfk"/>
+                            <constraint firstItem="w28-cu-gS2" firstAttribute="top" secondItem="55R-xY-qeZ" secondAttribute="bottom" constant="20" id="Hmq-vd-rx3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rvy-fL-HQx" secondAttribute="trailing" constant="20" id="VdP-i9-YWb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="55R-xY-qeZ" secondAttribute="trailing" constant="10" id="WfZ-qN-aB0"/>
+                            <constraint firstItem="w28-cu-gS2" firstAttribute="leading" secondItem="SqD-AG-rgb" secondAttribute="leadingMargin" constant="20" id="bdc-BC-L6O"/>
+                            <constraint firstItem="YZN-tR-eEu" firstAttribute="centerX" secondItem="SqD-AG-rgb" secondAttribute="centerX" id="dNz-4Y-BQr"/>
+                            <constraint firstItem="Rvy-fL-HQx" firstAttribute="leading" secondItem="SqD-AG-rgb" secondAttribute="leadingMargin" constant="20" id="e0b-Xk-xyd"/>
+                            <constraint firstItem="55R-xY-qeZ" firstAttribute="top" secondItem="GIU-NZ-QfK" secondAttribute="bottom" constant="50" id="eor-DG-fgv"/>
+                            <constraint firstItem="55R-xY-qeZ" firstAttribute="leading" secondItem="SqD-AG-rgb" secondAttribute="leadingMargin" constant="10" id="g36-Fd-xVU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w28-cu-gS2" secondAttribute="trailing" constant="20" id="ipK-t5-g3Q"/>
+                            <constraint firstItem="n6F-ty-gF3" firstAttribute="top" secondItem="Rvy-fL-HQx" secondAttribute="bottom" constant="400" id="lPG-Qy-Xhw"/>
+                            <constraint firstItem="YZN-tR-eEu" firstAttribute="top" secondItem="Rvy-fL-HQx" secondAttribute="bottom" constant="50" id="s1F-dA-5nh"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Ns2-sr-TLc" appends="YES" id="TRB-Ud-4LB"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="todoContentsTextField" destination="Rvy-fL-HQx" id="J2X-gT-wSn"/>
+                        <outlet property="todoNameTextView" destination="w28-cu-gS2" id="PfI-jE-RS3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vaQ-Gd-gbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ns2-sr-TLc">
+                    <connections>
+                        <action selector="closeKeyboardWhenTapBackground:" destination="ebv-gy-vbJ" id="dtP-Q2-eXX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="325.60000000000002" y="-310.79460269865069"/>
+        </scene>
+    </scenes>
+</document>

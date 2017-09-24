@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  traning2-3-2
+
+  Created by 増田紘宜 on 2017/09/20.
+  Copyright © 2017年 TsunakiMasuda. All rights reserved.
+*/
+"noTitleAlertErrorTopString" = "エラー";
+"noTitleAlertErrorMeinString" = "タイトルを入力してください";
+"resistSuccessAlertString" = "登録完了";
+"alertOkString" = "OK";

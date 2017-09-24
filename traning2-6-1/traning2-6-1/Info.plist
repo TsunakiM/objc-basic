@@ -25,7 +25,7 @@
 			<string>jp.st-ventures.traning2-6-1</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>stv://</string>
+				<string>stv</string>
 			</array>
 		</dict>
 	</array>

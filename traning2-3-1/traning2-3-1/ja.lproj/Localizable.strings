@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  traning2-3-1
+
+  Created by 増田紘宜 on 2017/09/15.
+  Copyright © 2017年 TsunakiMasuda. All rights reserved.
+ "key" = "value";
+*/
+
+"firstAccessString" = "はじめまして。";
+"notFirstAccessString" = "おかえりなさい。";
+
+"lordIntUserDefaultBtnString" = "Int型をロード";
+"changeIntUserDefaultBtnString" = "Int型を変更";
+
+"lordDoubleUserDefaultBtnString" = "Double型をロード";
+"changeDoubleUserDefaultBtnString" = "Double型を変更";
+
+"lordStringUserDefaultBtnString" = "String型をロード";
+"changeStringUserDefaultBtnString" = "String型を変更";

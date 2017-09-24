@@ -1,0 +1,9 @@
+/* 
+  Localizable .strings
+  traning2-1-19
+
+  Created by 増田紘宜 on 2017/09/16.
+  Copyright © 2017年 TsunakiMasuda. All rights reserved.
+*/
+"nameInputRequestLabel" = "Enter your name: ";
+"sendNameBtnString" = "SEND NAME";

@@ -14,12 +14,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *firstQueryValue;
 @property (weak, nonatomic) IBOutlet UILabel *secondQueryValue;
 
-typedef NS_ENUM(NSUInteger, queryContents){
+typedef NS_ENUM(NSUInteger, QueryContents){
     QueryName,
     QueryValue
 };
 
-typedef NS_ENUM(NSUInteger, queryList) {
+typedef NS_ENUM(NSUInteger, QueryList) {
     Caption,
     Comment
 };
@@ -31,6 +31,7 @@ typedef NS_ENUM(NSUInteger, queryList) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self createQueryParameter];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,14 +39,14 @@ typedef NS_ENUM(NSUInteger, queryList) {
     // Dispose of any resources that can be recreated.
 }
 
-- (void)createQueryParameterDictionary {
+- (void)createQueryParameter {
     // URLを受け取る（stv//:?caption=ABC&comment=AAA）
     NSArray *dividedByQuestionArray = [self.receiveQuery componentsSeparatedByString:@"?"];
     // Arrayの中身[stv//:, caption=ABC&comment=AAA]
-    NSArray *dividedByAmpersandArray = [dividedByQuestionArray[1] componentsSeparatedByString:@"&"];
+    NSArray *dividedByAmpersandArray = [dividedByQuestionArray[0] componentsSeparatedByString:@"&"];
     // Arrayの中身[caption=ABC, comment=AAA]
     NSMutableArray *queryList = [@[] mutableCopy];
-    for (int i = 0; i < dividedByQuestionArray.count; i++) {
+    for (int i = 0; i < dividedByAmpersandArray.count; i++) {
         NSArray *forSetArray = [dividedByAmpersandArray[i] componentsSeparatedByString:@"="];
         [queryList addObject:forSetArray];
     }

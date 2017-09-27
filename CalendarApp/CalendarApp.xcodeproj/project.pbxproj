@@ -15,6 +15,8 @@
 		91080B1C1F7B2B5E0063CA52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91080B1B1F7B2B5E0063CA52 /* main.m */; };
 		91080B261F7B2B5E0063CA52 /* CalendarAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91080B251F7B2B5E0063CA52 /* CalendarAppTests.m */; };
 		91080B311F7B2B5E0063CA52 /* CalendarAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91080B301F7B2B5E0063CA52 /* CalendarAppUITests.m */; };
+		91080B411F7B32F90063CA52 /* CalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91080B3F1F7B32F90063CA52 /* CalendarCell.m */; };
+		91080B421F7B32F90063CA52 /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91080B401F7B32F90063CA52 /* CalendarCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		91080B2C1F7B2B5E0063CA52 /* CalendarAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91080B301F7B2B5E0063CA52 /* CalendarAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarAppUITests.m; sourceTree = "<group>"; };
 		91080B321F7B2B5E0063CA52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91080B3E1F7B32F90063CA52 /* CalendarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarCell.h; sourceTree = "<group>"; };
+		91080B3F1F7B32F90063CA52 /* CalendarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarCell.m; sourceTree = "<group>"; };
+		91080B401F7B32F90063CA52 /* CalendarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,9 @@
 				91080B0D1F7B2B5E0063CA52 /* AppDelegate.m */,
 				91080B0F1F7B2B5E0063CA52 /* ViewController.h */,
 				91080B101F7B2B5E0063CA52 /* ViewController.m */,
+				91080B3E1F7B32F90063CA52 /* CalendarCell.h */,
+				91080B3F1F7B32F90063CA52 /* CalendarCell.m */,
+				91080B401F7B32F90063CA52 /* CalendarCell.xib */,
 				91080B151F7B2B5E0063CA52 /* Assets.xcassets */,
 				91080B1A1F7B2B5E0063CA52 /* Info.plist */,
 				91080B1B1F7B2B5E0063CA52 /* main.m */,
@@ -241,6 +249,7 @@
 				91080B191F7B2B5E0063CA52 /* LaunchScreen.storyboard in Resources */,
 				91080B161F7B2B5E0063CA52 /* Assets.xcassets in Resources */,
 				91080B141F7B2B5E0063CA52 /* Main.storyboard in Resources */,
+				91080B421F7B32F90063CA52 /* CalendarCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +277,7 @@
 				91080B111F7B2B5E0063CA52 /* ViewController.m in Sources */,
 				91080B1C1F7B2B5E0063CA52 /* main.m in Sources */,
 				91080B0E1F7B2B5E0063CA52 /* AppDelegate.m in Sources */,
+				91080B411F7B32F90063CA52 /* CalendarCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

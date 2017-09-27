@@ -17,6 +17,8 @@
 		91080B311F7B2B5E0063CA52 /* CalendarAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91080B301F7B2B5E0063CA52 /* CalendarAppUITests.m */; };
 		91080B411F7B32F90063CA52 /* CalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91080B3F1F7B32F90063CA52 /* CalendarCell.m */; };
 		91080B421F7B32F90063CA52 /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91080B401F7B32F90063CA52 /* CalendarCell.xib */; };
+		91080B461F7B41EE0063CA52 /* CalenderHeaderSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 91080B441F7B41EE0063CA52 /* CalenderHeaderSection.m */; };
+		91080B471F7B41EE0063CA52 /* CalenderHeaderSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91080B451F7B41EE0063CA52 /* CalenderHeaderSection.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 		91080B3E1F7B32F90063CA52 /* CalendarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarCell.h; sourceTree = "<group>"; };
 		91080B3F1F7B32F90063CA52 /* CalendarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarCell.m; sourceTree = "<group>"; };
 		91080B401F7B32F90063CA52 /* CalendarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCell.xib; sourceTree = "<group>"; };
+		91080B431F7B41EE0063CA52 /* CalenderHeaderSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalenderHeaderSection.h; sourceTree = "<group>"; };
+		91080B441F7B41EE0063CA52 /* CalenderHeaderSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalenderHeaderSection.m; sourceTree = "<group>"; };
+		91080B451F7B41EE0063CA52 /* CalenderHeaderSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderHeaderSection.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +120,9 @@
 				91080B3E1F7B32F90063CA52 /* CalendarCell.h */,
 				91080B3F1F7B32F90063CA52 /* CalendarCell.m */,
 				91080B401F7B32F90063CA52 /* CalendarCell.xib */,
+				91080B431F7B41EE0063CA52 /* CalenderHeaderSection.h */,
+				91080B441F7B41EE0063CA52 /* CalenderHeaderSection.m */,
+				91080B451F7B41EE0063CA52 /* CalenderHeaderSection.xib */,
 				91080B151F7B2B5E0063CA52 /* Assets.xcassets */,
 				91080B1A1F7B2B5E0063CA52 /* Info.plist */,
 				91080B1B1F7B2B5E0063CA52 /* main.m */,
@@ -246,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91080B471F7B41EE0063CA52 /* CalenderHeaderSection.xib in Resources */,
 				91080B191F7B2B5E0063CA52 /* LaunchScreen.storyboard in Resources */,
 				91080B161F7B2B5E0063CA52 /* Assets.xcassets in Resources */,
 				91080B141F7B2B5E0063CA52 /* Main.storyboard in Resources */,
@@ -276,6 +285,7 @@
 			files = (
 				91080B111F7B2B5E0063CA52 /* ViewController.m in Sources */,
 				91080B1C1F7B2B5E0063CA52 /* main.m in Sources */,
+				91080B461F7B41EE0063CA52 /* CalenderHeaderSection.m in Sources */,
 				91080B0E1F7B2B5E0063CA52 /* AppDelegate.m in Sources */,
 				91080B411F7B32F90063CA52 /* CalendarCell.m in Sources */,
 			);

@@ -1,17 +1,16 @@
 //
-//  CalendarCell.m
+//  CalenderHeaderSection.m
 //  CalendarApp
 //
 //  Created by 増田紘宜 on 2017/09/27.
 //  Copyright © 2017年 TsunakiMasuda. All rights reserved.
 //
 
-#import "CalendarCell.h"
+#import "CalenderHeaderSection.h"
 
-#pragma mark GlobalConstants
-NSString *const CalendarCellIdentifier = @"CalendarCell";
+NSString *const CalenderHeaderIdentifier = @"CalenderHeader";
 
-@implementation CalendarCell
+@implementation CalenderHeaderSection
 
 - (void)awakeFromNib {
     [super awakeFromNib];

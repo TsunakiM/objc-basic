@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface CalendarCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *CalenderCellContentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *calenderCellContentLabel;
 
-#pragma mark GlobalConstant
+#pragma mark GlobalConstants
 extern NSString *const CalendarCellIdentifier;
-extern NSString *const CalenderHeaderIdentifier;
 
 @end

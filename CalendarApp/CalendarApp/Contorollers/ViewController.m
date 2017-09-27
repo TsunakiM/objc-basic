@@ -10,16 +10,8 @@
 #import "CalendarCell.h"
 #import "CalenderHeaderSection.h"
 
-
 @implementation NSDate (Extension)
-
-/**
- *  Return the date one month before the receiver.
- *
- *  @return  date
- */
-- (NSDate *)monthAgoDate
-{
+- (NSDate *)monthAgoDate {
     NSInteger addValue = -1;
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *dateComponents = [NSDateComponents new];
@@ -27,13 +19,7 @@
     return [calendar dateByAddingComponents:dateComponents toDate:self options:0];
 }
 
-/**
- *  Return the date one month after the receiver.
- *
- *  @return  date
- */
-- (NSDate *)monthLaterDate
-{
+- (NSDate *)monthLaterDate {
     NSInteger addValue = 1;
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *dateComponents = [NSDateComponents new];
@@ -43,22 +29,38 @@
 
 @end
 
-
 @interface ViewController ()
 @property (nonatomic, weak) IBOutlet UICollectionView *mainCollectionView;
 @property (nonatomic, strong) NSDate *selectedDate;
+@property (nonatomic, weak) NSString *headerDate;
 @property NSUInteger cellSize;
-@property (nonatomic, weak) NSString *headerString;
+
+typedef NS_ENUM (NSUInteger, SectionContents) {
+    WeekNameContents,
+    DayContents
+};
+
+typedef NS_ENUM (NSUInteger, DayOfTheWeek) {
+    // indexPath.row % 7の結果
+    Sunday = 0,
+    Saturday = 6
+};
 
 @end
 
 #pragma mark LocalConstants
+// セクションの数
+static const NSUInteger NumberOfSection = 2;
+// ヘッダの高さ
+static const NSUInteger HeaderHight = 70;
 // １行に表示するセルの数
 static const NSUInteger DaysPerWeek = 7;
 // セル間のスペースのサイズ。
 static const NSUInteger CellSpaceSize = 5;
 // セル間のスペースの数
 static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
+// セルの高さ倍率
+static const float CellHightMagnification = 1.5f;
 
 #pragma mark - ViewController
 
@@ -69,18 +71,16 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
 
     self.selectedDate = [NSDate date];
     
-    // storybord側で、delegateとdataSourceに接続済み。
-    /*~~~ セルの大きさを決める計算 ~~~*/
-    // 画面のサイズを取得
+    // 画面のサイズを取得。
     CGRect screenSize = [[UIScreen mainScreen] bounds];
     // 横幅の決定。横幅からマージンを引いたものを、横に表示したい数で割る。
     self.cellSize = (screenSize.size.width - (CellSpaceSize * NumberOfSellSpace)) / DaysPerWeek;
     
-    // Nibファイル（xib）を接続
+    // Nibファイル（xib）を接続。
     UINib *customSellNib = [UINib nibWithNibName:@"CalendarCell" bundle:nil] ;
-    UINib *customSectionNib = [UINib nibWithNibName:@"CalenderHeaderSection" bundle:nil];
     [self.mainCollectionView registerNib:customSellNib
               forCellWithReuseIdentifier:CalendarCellIdentifier];
+    UINib *customSectionNib = [UINib nibWithNibName:@"CalenderHeaderSection" bundle:nil];
     [self.mainCollectionView registerNib:customSectionNib
               forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                      withReuseIdentifier:CalenderHeaderIdentifier];
@@ -91,9 +91,7 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - BtnAction
-
 - (IBAction)goPreviousMonthBtn:(id)sender {
     self.selectedDate = [self.selectedDate monthAgoDate];
     
@@ -111,20 +109,19 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
 - (void)setSelectedDate:(NSDate *)selectedDate {
     _selectedDate = selectedDate;
     
-    // update title text
     NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.dateFormat = @"yyyy/M";
-    self.headerString = [formatter stringFromDate:selectedDate];
+    formatter.dateFormat = @"yyyy / M";
+    self.headerDate = [formatter stringFromDate:selectedDate];
 }
+
 - (NSDate *)firstDateOfMonth {
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
                                                                    fromDate:self.selectedDate];
     components.day = 1;
-    
     NSDate *firstDateMonth = [[NSCalendar currentCalendar] dateFromComponents:components];
-    
     return firstDateMonth;
 }
+
 
 - (NSDate *)dateForCellAtIndexPath:(NSIndexPath *)indexPath {
     // calculate the ordinal number of first day
@@ -142,18 +139,17 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
     return date;
 }
 
-#pragma mark - Section Header
+#pragma mark - Section Contents (Header)
 
 // セクションの数
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+    return NumberOfSection;
 }
 
 // セクションの内容を決定
 - (UICollectionReusableView*)collectionView:(UICollectionView *)collectionView
           viewForSupplementaryElementOfKind:(NSString *)kind
                                 atIndexPath:(NSIndexPath *)indexPath {
-    // セクションヘッダ・フッタを引っ張ってくる。
     UICollectionReusableView* reusableview = nil;
 
     CalenderHeaderSection *headerView =
@@ -163,11 +159,11 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
 
     if(kind == UICollectionElementKindSectionHeader) {
         switch (indexPath.section) {
-            case 0:
-                headerView.customSectionLabel.text = self.headerString;
+            case WeekNameContents:
+                headerView.customSectionLabel.text = self.headerDate;
                 reusableview = headerView;
                 break;
-            case 1:
+            case DayContents:
                 headerView.customSectionLabel.text = @"";
                 reusableview = headerView;
                 break;
@@ -178,13 +174,14 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
     return reusableview;
 }
 
+// セクションの高さを指定（１つ目を指定、２つ目のセクションを高さ0で非表示に）
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     CGSize headerHight;
     switch (section) {
-        case 0:
-            headerHight = CGSizeMake(50, 50);
+        case WeekNameContents:
+            headerHight = CGSizeMake(0, HeaderHight);
             break;
-        case 1:
+        case DayContents:
             headerHight = CGSizeMake(0, 0);
             break;
         default:
@@ -197,7 +194,7 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
 
 #pragma mark - Cell Contents
 
-// 画面全体に存在させたいセルの数（セルの合計個数）
+// セルの個数を計算
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSRange rangeOfWeeks =
     [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitWeekOfMonth
@@ -207,10 +204,10 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
     NSInteger numberOfItems = numberOfWeeks * DaysPerWeek;
     
     switch (section) {
-        case 0:
+        case WeekNameContents:
             return DaysPerWeek;
             break;
-        case 1:
+        case DayContents:
             return numberOfItems;
             break;
         default:
@@ -227,18 +224,17 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize cellSize;
     switch (indexPath.section) {
-        case 0:
+        case WeekNameContents:
             cellSize = CGSizeMake(self.cellSize, self.cellSize);
             break;
-        case 1:
-            cellSize = CGSizeMake(self.cellSize, self.cellSize * 1.3f);
+        case DayContents:
+            cellSize = CGSizeMake(self.cellSize, self.cellSize * CellHightMagnification);
             break;
         default:
             NSLog(@"ERROR!! sizeForItemAtIndexPath");
             cellSize = CGSizeMake(self.cellSize, self.cellSize);
             break;
     }
-    
     return cellSize;
 }
 
@@ -248,34 +244,34 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
                                                                    forIndexPath:indexPath];
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateFormat = @"d";
-    NSLog(@"%@", formatter);
     NSString *thisCellDay = [formatter stringFromDate:[self dateForCellAtIndexPath:indexPath]];
     NSArray *weekName = @[@"日", @"月", @"火", @"水", @"木", @"金", @"土"];
+    
+    // セルの中身の決定。
     switch (indexPath.section) {
-        case 0:
+        case WeekNameContents:
             cell.calenderCellContentLabel.text = weekName[indexPath.row];
             break;
-        case 1:
+        case DayContents:
             cell.calenderCellContentLabel.text = thisCellDay;
             break;
         default:
             break;
     }
-    
+    // セルの文字に色を付ける設定（土曜を青に、日曜を赤に。それ以外を黒に）。
     switch (indexPath.row % 7) {
-        case 0:
+        case Sunday:
             cell.calenderCellContentLabel.textColor = [UIColor redColor];
             break;
-        case 6:
+        case Saturday:
             cell.calenderCellContentLabel.textColor = [UIColor blueColor];
             break;
         default:
             cell.calenderCellContentLabel.textColor = [UIColor blackColor];
             break;
     }
-    
+    // 当月以外の日を非活性（灰色）にする処理。
     NSInteger cellDay = [thisCellDay integerValue];
-    
     if(indexPath.section == 1 && indexPath.row < 7 && cellDay > 7) {
         cell.calenderCellContentLabel.textColor = [UIColor lightGrayColor];
     } else if (indexPath.section == 1 && indexPath.row > 25 && cellDay < 7){

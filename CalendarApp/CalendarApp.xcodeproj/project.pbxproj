@@ -179,9 +179,9 @@
 		91080B4C1F7B87800063CA52 /* CalenderCell */ = {
 			isa = PBXGroup;
 			children = (
+				91080B401F7B32F90063CA52 /* CalendarCell.xib */,
 				91080B3E1F7B32F90063CA52 /* CalendarCell.h */,
 				91080B3F1F7B32F90063CA52 /* CalendarCell.m */,
-				91080B401F7B32F90063CA52 /* CalendarCell.xib */,
 			);
 			path = CalenderCell;
 			sourceTree = "<group>";
@@ -189,9 +189,9 @@
 		91080B4D1F7B878C0063CA52 /* CalenderSection */ = {
 			isa = PBXGroup;
 			children = (
+				91080B451F7B41EE0063CA52 /* CalenderHeaderSection.xib */,
 				91080B431F7B41EE0063CA52 /* CalenderHeaderSection.h */,
 				91080B441F7B41EE0063CA52 /* CalenderHeaderSection.m */,
-				91080B451F7B41EE0063CA52 /* CalenderHeaderSection.xib */,
 			);
 			path = CalenderSection;
 			sourceTree = "<group>";

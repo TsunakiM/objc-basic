@@ -111,18 +111,10 @@
 		91080B0B1F7B2B5E0063CA52 /* CalendarApp */ = {
 			isa = PBXGroup;
 			children = (
-				91080B121F7B2B5E0063CA52 /* Main.storyboard */,
-				91080B171F7B2B5E0063CA52 /* LaunchScreen.storyboard */,
-				91080B0C1F7B2B5E0063CA52 /* AppDelegate.h */,
-				91080B0D1F7B2B5E0063CA52 /* AppDelegate.m */,
-				91080B0F1F7B2B5E0063CA52 /* ViewController.h */,
-				91080B101F7B2B5E0063CA52 /* ViewController.m */,
-				91080B3E1F7B32F90063CA52 /* CalendarCell.h */,
-				91080B3F1F7B32F90063CA52 /* CalendarCell.m */,
-				91080B401F7B32F90063CA52 /* CalendarCell.xib */,
-				91080B431F7B41EE0063CA52 /* CalenderHeaderSection.h */,
-				91080B441F7B41EE0063CA52 /* CalenderHeaderSection.m */,
-				91080B451F7B41EE0063CA52 /* CalenderHeaderSection.xib */,
+				91080B481F7B87040063CA52 /* Views */,
+				91080B491F7B87120063CA52 /* Contorollers */,
+				91080B4A1F7B87370063CA52 /* Models */,
+				91080B4B1F7B875B0063CA52 /* Others */,
 				91080B151F7B2B5E0063CA52 /* Assets.xcassets */,
 				91080B1A1F7B2B5E0063CA52 /* Info.plist */,
 				91080B1B1F7B2B5E0063CA52 /* main.m */,
@@ -146,6 +138,62 @@
 				91080B321F7B2B5E0063CA52 /* Info.plist */,
 			);
 			path = CalendarAppUITests;
+			sourceTree = "<group>";
+		};
+		91080B481F7B87040063CA52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91080B4D1F7B878C0063CA52 /* CalenderSection */,
+				91080B4C1F7B87800063CA52 /* CalenderCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91080B491F7B87120063CA52 /* Contorollers */ = {
+			isa = PBXGroup;
+			children = (
+				91080B121F7B2B5E0063CA52 /* Main.storyboard */,
+				91080B0F1F7B2B5E0063CA52 /* ViewController.h */,
+				91080B101F7B2B5E0063CA52 /* ViewController.m */,
+			);
+			path = Contorollers;
+			sourceTree = "<group>";
+		};
+		91080B4A1F7B87370063CA52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		91080B4B1F7B875B0063CA52 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				91080B171F7B2B5E0063CA52 /* LaunchScreen.storyboard */,
+				91080B0C1F7B2B5E0063CA52 /* AppDelegate.h */,
+				91080B0D1F7B2B5E0063CA52 /* AppDelegate.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		91080B4C1F7B87800063CA52 /* CalenderCell */ = {
+			isa = PBXGroup;
+			children = (
+				91080B3E1F7B32F90063CA52 /* CalendarCell.h */,
+				91080B3F1F7B32F90063CA52 /* CalendarCell.m */,
+				91080B401F7B32F90063CA52 /* CalendarCell.xib */,
+			);
+			path = CalenderCell;
+			sourceTree = "<group>";
+		};
+		91080B4D1F7B878C0063CA52 /* CalenderSection */ = {
+			isa = PBXGroup;
+			children = (
+				91080B431F7B41EE0063CA52 /* CalenderHeaderSection.h */,
+				91080B441F7B41EE0063CA52 /* CalenderHeaderSection.m */,
+				91080B451F7B41EE0063CA52 /* CalenderHeaderSection.xib */,
+			);
+			path = CalenderSection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

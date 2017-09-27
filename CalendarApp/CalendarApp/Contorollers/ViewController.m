@@ -60,6 +60,7 @@ static const NSUInteger CellSpaceSize = 5;
 // セル間のスペースの数
 static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
 
+#pragma mark - ViewController
 
 @implementation ViewController
 
@@ -84,7 +85,6 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
               forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                      withReuseIdentifier:CalenderHeaderIdentifier];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -244,33 +244,42 @@ static const NSUInteger NumberOfSellSpace = DaysPerWeek + 1;
 
 // セルを表示させる
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    // デフォルトのCollectionViewCellは、画像を保持するプロパティがないので、カスタムクラスを作成してインスタンス化。
     CalendarCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CalendarCellIdentifier
                                                                    forIndexPath:indexPath];
-    cell.calenderCellContentLabel.textColor = [UIColor blackColor];
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateFormat = @"d";
+    NSLog(@"%@", formatter);
+    NSString *thisCellDay = [formatter stringFromDate:[self dateForCellAtIndexPath:indexPath]];
     NSArray *weekName = @[@"日", @"月", @"火", @"水", @"木", @"金", @"土"];
     switch (indexPath.section) {
         case 0:
             cell.calenderCellContentLabel.text = weekName[indexPath.row];
             break;
         case 1:
-            cell.calenderCellContentLabel.text = [formatter stringFromDate:[self dateForCellAtIndexPath:indexPath]];
+            cell.calenderCellContentLabel.text = thisCellDay;
             break;
         default:
             break;
     }
     
     switch (indexPath.row % 7) {
-        case 6:
-            cell.calenderCellContentLabel.textColor = [UIColor blueColor];
-            break;
         case 0:
             cell.calenderCellContentLabel.textColor = [UIColor redColor];
             break;
-        default:
+        case 6:
+            cell.calenderCellContentLabel.textColor = [UIColor blueColor];
             break;
+        default:
+            cell.calenderCellContentLabel.textColor = [UIColor blackColor];
+            break;
+    }
+    
+    NSInteger cellDay = [thisCellDay integerValue];
+    
+    if(indexPath.section == 1 && indexPath.row < 7 && cellDay > 7) {
+        cell.calenderCellContentLabel.textColor = [UIColor lightGrayColor];
+    } else if (indexPath.section == 1 && indexPath.row > 25 && cellDay < 7){
+        cell.calenderCellContentLabel.textColor = [UIColor lightGrayColor];
     }
     
     return cell;

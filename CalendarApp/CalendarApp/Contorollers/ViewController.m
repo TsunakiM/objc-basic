@@ -32,7 +32,7 @@
 @interface ViewController ()
 @property (nonatomic, weak) IBOutlet UICollectionView *mainCollectionView;
 @property (nonatomic, strong) NSDate *selectedDate;
-@property (nonatomic, weak) NSString *headerDate;
+@property (nonatomic, strong) NSString *headerDate;
 @property NSUInteger cellSize;
 
 typedef NS_ENUM (NSUInteger, SectionContents) {
@@ -76,6 +76,25 @@ static const float CellHightMagnification = 1.5f;
     // 横幅の決定。横幅からマージンを引いたものを、横に表示したい数で割る。
     self.cellSize = (screenSize.size.width - (CellSpaceSize * NumberOfSellSpace)) / DaysPerWeek;
     
+    
+    // UIPanGestureRecognizer をインスタンス化します。また、イベント発生時に呼び出すメソッドを selector で指定します。
+    UISwipeGestureRecognizer* swipeRightGesture = [[UISwipeGestureRecognizer alloc]
+                                                   initWithTarget:self
+                                                   action:@selector(selSwipeRightGesture:)];
+    // 右スワイプのイベントを指定します。
+    swipeRightGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    // Viewへ関連付けします。
+    [self.view addGestureRecognizer:swipeRightGesture];
+    
+    // UIPanGestureRecognizer をインスタンス化します。また、イベント発生時に呼び出すメソッドを selector で指定します。
+    UISwipeGestureRecognizer* swipeLeftGesture = [[UISwipeGestureRecognizer alloc]
+                                                  initWithTarget:self
+                                                  action:@selector(selSwipeLeftGesture:)];
+    // 左スワイプのイベントを指定します。
+    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    // Viewへ関連付けします。
+    [self.view addGestureRecognizer:swipeLeftGesture];
+    
     // Nibファイル（xib）を接続。
     UINib *customSellNib = [UINib nibWithNibName:@"CalendarCell" bundle:nil] ;
     [self.mainCollectionView registerNib:customSellNib
@@ -91,14 +110,33 @@ static const float CellHightMagnification = 1.5f;
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - BtnAction
+#pragma mark - Btn & Swipe Action
+
 - (IBAction)goPreviousMonthBtn:(id)sender {
+    [self goPreviousMonth];
+}
+
+- (IBAction)goNextMonthBtn:(id)sender {
+    [self goNextMonth];
+}
+
+// 右スワイプされた時に実行されるメソッド、selectorで指定します。
+- (void)selSwipeRightGesture:(UISwipeGestureRecognizer *)sender {
+    [self goPreviousMonth];
+}
+
+// 左スワイプされた時に実行されるメソッド、selectorで指定します。
+- (void)selSwipeLeftGesture:(UISwipeGestureRecognizer *)sender {
+    [self goNextMonth];
+}
+
+- (void)goPreviousMonth {
     self.selectedDate = [self.selectedDate monthAgoDate];
     
     [self.mainCollectionView reloadData];
 }
 
-- (IBAction)goNextMonthBtn:(id)sender {
+- (void)goNextMonth {
     self.selectedDate = [self.selectedDate monthLaterDate];
     
     [self.mainCollectionView reloadData];
@@ -110,7 +148,7 @@ static const float CellHightMagnification = 1.5f;
     _selectedDate = selectedDate;
     
     NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.dateFormat = @"yyyy / M";
+    formatter.dateFormat = @"yyyy月M日";
     self.headerDate = [formatter stringFromDate:selectedDate];
 }
 

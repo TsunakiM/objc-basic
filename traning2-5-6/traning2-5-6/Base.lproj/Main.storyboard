@@ -18,20 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JuV-o3-PDk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWI-5J-uxc">
+                                <rect key="frame" x="141" y="318.5" width="92" height="30"/>
+                                <state key="normal" title="現在位置取得"/>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="X7P-9O-fdM"/>
+                                    <action selector="getLocationBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WSY-29-awj"/>
                                 </connections>
-                            </mapView>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OWI-5J-uxc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ENU-na-iB0"/>
+                            <constraint firstItem="OWI-5J-uxc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X3G-rl-l0s"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="mapView" destination="JuV-o3-PDk" id="YjK-sq-Grp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

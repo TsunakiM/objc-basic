@@ -12,10 +12,7 @@
 
 
 @interface ViewController ()
-// MapKitをインポート。
-// ViewController側でMKMapViewDelegateを接続。
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -23,20 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // NSLocationWhenInUseUsageDescriptionに設定したメッセージでユーザに確認
-    [self.locationManager requestWhenInUseAuthorization];
-    
-    //GPSの利用可否判断
-    if ([CLLocationManager locationServicesEnabled]) {
-        self.locationManager = [[CLLocationManager alloc] init];
-        self.locationManager.delegate = self;
-        self.locationManager.distanceFilter = 100.0;
-        [self.locationManager startUpdatingLocation];
-        NSLog(@"Start updating location.");
-    } else {
-        NSLog(@"The location services is disabled.");
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,27 +27,46 @@
     // Dispose of any resources that can be recreated.
 }
 
-// GPSで位置情報の更新があったときに呼ばれる
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    
-    CLLocation *newLocation = [locations lastObject];
-    // 位置情報を取り出す
-    //緯度
-    double latitude = newLocation.coordinate.latitude;
-    //経度
-    double longitude = newLocation.coordinate.longitude;
-    
-    NSLog(@"%f",latitude);
-    NSLog(@"%f",longitude);
-    
-    /*
-    // 緯度 %+.6f
-    NSString *latitude  = [NSString stringWithFormat:@"%+.6f",
-                               location.coordinate.latitude];
-    // 経度 %+.6f
-    NSString *longitude = [NSString stringWithFormat:@"%+.6f",
-                                location.coordinate.longitude];
-     */
+- (void)getLocationData {
+    // 取得可能かをチェック
+    if ([CLLocationManager locationServicesEnabled]) {
+        // 初回起動の場合、初期化を行う
+        if (self.locationManager == nil) {
+            self.locationManager = [[CLLocationManager alloc] init];
+            self.locationManager.delegate = self;
+            [self.locationManager requestWhenInUseAuthorization];
+        } else {
+            // データの出力
+            [self outputLocationDataAction];
+        }
+    } else {
+        NSLog(@"現在地情報の取得に失敗しました。");
+    }
+}
+
+// 初回、許可アクション後の処理
+-(void)locationManager:(CLLocationManager *)manager
+didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self outputLocationDataAction];
+    }
+}
+
+// 位置情報を出力するメソッド
+- (void)outputLocationDataAction {
+    self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
+    NSLog(@"現在地の緯度は（%f）、経度は（%f）",
+          self.locationManager.location.coordinate.latitude,
+          self.locationManager.location.coordinate.longitude);
+    [self.locationManager stopUpdatingLocation];
+    self.locationManager.delegate = nil;
+    self.locationManager = nil;
+}
+
+- (IBAction)getLocationBtn:(id)sender {
+    [self getLocationData];
 }
 
 /*

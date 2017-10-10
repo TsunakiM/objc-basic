@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'traning2-5-8' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+	pod 'Firebase/Messaging'
+
+  # Pods for traning2-5-8
+
+  target 'traning2-5-8Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'traning2-5-8UITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

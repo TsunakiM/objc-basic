@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91CAC3601F8DBE57005399BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91CAC35F1F8DBE57005399BD /* Localizable.strings */; };
+		91CAC3631F8DCF7E005399BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CAC3621F8DCF7D005399BD /* MapKit.framework */; };
+		91CAC3661F8DD663005399BD /* LocalizableStringConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CAC3651F8DD663005399BD /* LocalizableStringConverter.m */; };
 		91EE2CA91F83211C000B5480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EE2CA81F83211C000B5480 /* AppDelegate.m */; };
 		91EE2CAC1F83211C000B5480 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EE2CAB1F83211C000B5480 /* ViewController.m */; };
 		91EE2CAF1F83211C000B5480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91EE2CAD1F83211C000B5480 /* Main.storyboard */; };
@@ -15,7 +18,6 @@
 		91EE2CB71F83211C000B5480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EE2CB61F83211C000B5480 /* main.m */; };
 		91EE2CC11F83211C000B5480 /* traning2_5_7Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EE2CC01F83211C000B5480 /* traning2_5_7Tests.m */; };
 		91EE2CCC1F83211C000B5480 /* traning2_5_7UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EE2CCB1F83211C000B5480 /* traning2_5_7UITests.m */; };
-		91EE2CDF1F834709000B5480 /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EE2CDE1F834709000B5480 /* LocationModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91CAC35D1F8DBE3D005399BD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		91CAC35E1F8DBE3D005399BD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		91CAC35F1F8DBE57005399BD /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		91CAC3621F8DCF7D005399BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		91CAC3641F8DD663005399BD /* LocalizableStringConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizableStringConverter.h; sourceTree = "<group>"; };
+		91CAC3651F8DD663005399BD /* LocalizableStringConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizableStringConverter.m; sourceTree = "<group>"; };
 		91EE2CA41F83211C000B5480 /* traning2-5-7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "traning2-5-7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91EE2CA71F83211C000B5480 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		91EE2CA81F83211C000B5480 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,8 +60,6 @@
 		91EE2CC71F83211C000B5480 /* traning2-5-7UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "traning2-5-7UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91EE2CCB1F83211C000B5480 /* traning2_5_7UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = traning2_5_7UITests.m; sourceTree = "<group>"; };
 		91EE2CCD1F83211C000B5480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91EE2CDD1F834709000B5480 /* LocationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationModel.h; sourceTree = "<group>"; };
-		91EE2CDE1F834709000B5480 /* LocationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91CAC3631F8DCF7E005399BD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91CAC3611F8DCF7D005399BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91CAC3621F8DCF7D005399BD /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		91EE2C9B1F83211C000B5480 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +103,7 @@
 				91EE2CBF1F83211C000B5480 /* traning2-5-7Tests */,
 				91EE2CCA1F83211C000B5480 /* traning2-5-7UITests */,
 				91EE2CA51F83211C000B5480 /* Products */,
+				91CAC3611F8DCF7D005399BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,9 +120,8 @@
 		91EE2CA61F83211C000B5480 /* traning2-5-7 */ = {
 			isa = PBXGroup;
 			children = (
-				91EE2CDB1F8346BE000B5480 /* View */,
 				91EE2CDA1F8346AC000B5480 /* Controller */,
-				91EE2CD91F8346A2000B5480 /* Model */,
+				91EE2CD91F8346A2000B5480 /* Helper */,
 				91EE2CDC1F8346CE000B5480 /* Other */,
 				91EE2CB01F83211C000B5480 /* Assets.xcassets */,
 				91EE2CB51F83211C000B5480 /* Info.plist */,
@@ -133,13 +148,13 @@
 			path = "traning2-5-7UITests";
 			sourceTree = "<group>";
 		};
-		91EE2CD91F8346A2000B5480 /* Model */ = {
+		91EE2CD91F8346A2000B5480 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				91EE2CDD1F834709000B5480 /* LocationModel.h */,
-				91EE2CDE1F834709000B5480 /* LocationModel.m */,
+				91CAC3641F8DD663005399BD /* LocalizableStringConverter.h */,
+				91CAC3651F8DD663005399BD /* LocalizableStringConverter.m */,
 			);
-			path = Model;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		91EE2CDA1F8346AC000B5480 /* Controller */ = {
@@ -152,16 +167,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		91EE2CDB1F8346BE000B5480 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		91EE2CDC1F8346CE000B5480 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				91CAC35F1F8DBE57005399BD /* Localizable.strings */,
 				91EE2CB21F83211C000B5480 /* LaunchScreen.storyboard */,
 				91EE2CA71F83211C000B5480 /* AppDelegate.h */,
 				91EE2CA81F83211C000B5480 /* AppDelegate.m */,
@@ -276,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91EE2CB41F83211C000B5480 /* LaunchScreen.storyboard in Resources */,
+				91CAC3601F8DBE57005399BD /* Localizable.strings in Resources */,
 				91EE2CB11F83211C000B5480 /* Assets.xcassets in Resources */,
 				91EE2CAF1F83211C000B5480 /* Main.storyboard in Resources */,
 			);
@@ -302,7 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91EE2CDF1F834709000B5480 /* LocationModel.m in Sources */,
+				91CAC3661F8DD663005399BD /* LocalizableStringConverter.m in Sources */,
 				91EE2CAC1F83211C000B5480 /* ViewController.m in Sources */,
 				91EE2CB71F83211C000B5480 /* main.m in Sources */,
 				91EE2CA91F83211C000B5480 /* AppDelegate.m in Sources */,
@@ -345,6 +355,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				91EE2CAE1F83211C000B5480 /* Base */,
+				91CAC35D1F8DBE3D005399BD /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -353,6 +364,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				91EE2CB31F83211C000B5480 /* Base */,
+				91CAC35E1F8DBE3D005399BD /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -364,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -408,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -419,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -457,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

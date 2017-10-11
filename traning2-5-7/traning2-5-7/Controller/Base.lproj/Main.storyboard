@@ -19,18 +19,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="w4R-NC-4eT">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="587"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="92o-Uc-BGt"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-X8-9zs">
+                                <rect key="frame" x="139" y="619" width="97" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="ピンを表示">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jpn-8f-b07"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w4R-NC-4eT" secondAttribute="trailing" id="AD3-fa-n79"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w4R-NC-4eT" secondAttribute="bottom" id="QbT-3O-L8f"/>
-                            <constraint firstItem="w4R-NC-4eT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dhF-zI-SPI"/>
-                            <constraint firstItem="w4R-NC-4eT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x3j-Qo-sTR"/>
+                            <constraint firstItem="w4R-NC-4eT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Ml-11-zEO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kgb-X8-9zs" secondAttribute="bottom" constant="10" id="GQV-zE-Z26"/>
+                            <constraint firstAttribute="bottom" secondItem="w4R-NC-4eT" secondAttribute="bottom" constant="60" id="dQx-FD-B6C"/>
+                            <constraint firstItem="w4R-NC-4eT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fYi-Qk-bQh"/>
+                            <constraint firstItem="w4R-NC-4eT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="t8g-0R-nfD"/>
+                            <constraint firstItem="kgb-X8-9zs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tNF-so-pgk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
